@@ -1,0 +1,5 @@
+# robots.txt for PostOp Tracker
+User-agent: *
+Allow: /
+
+Sitemap: https://postoptracker.com/sitemap.xml
