@@ -3,51 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions Légales — PostOp Tracker</title>
+    <title>Mentions légales — Karefully</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .legal-content { max-width: 800px; margin: 120px auto; padding: 0 5vw; }
-        .legal-content h1 { margin-bottom: 40px; }
-        .legal-content h2 { margin-top: 40px; margin-bottom: 20px; font-size: 24px; color: var(--primary); }
-        .legal-content p { margin-bottom: 16px; color: var(--ink-muted); }
+        .legal-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px clamp(20px, 4vw, 48px); background: rgba(247, 251, 249, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+        .legal-content { max-width: 800px; margin: 56px auto 96px; padding: 0 24px; }
+        .legal-content h1 { margin-bottom: 32px; }
+        .legal-content h2 { margin-top: 40px; margin-bottom: 14px; font-size: 1.4rem; color: var(--emerald-700); }
+        .legal-content p, .legal-content li { margin-bottom: 14px; color: var(--muted); }
+        .legal-content a { color: var(--emerald-700); }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="nav-logo">PostOp<span>Tracker</span></a>
-        <a href="index.html" class="nav-cta">Retour à l'accueil</a>
+    <nav class="legal-nav">
+        <a href="index.html" class="brand" aria-label="Karefully — accueil">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 100 100" width="30" height="30" fill="none"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="brand-name">karefully</span>
+        </a>
+        <a href="index.html" class="btn btn-ghost">Retour à l'accueil</a>
     </nav>
 
     <main class="legal-content">
-        <h1 class="serif">Mentions Légales</h1>
-        
+        <h1>Mentions légales</h1>
+
         <section>
             <h2>1. Éditeur du site</h2>
-            <p>Le site <strong>PostOp Tracker</strong> est édité par <strong>Roots Agency</strong>.</p>
+            <p>Le site <strong>Karefully</strong> est édité par <strong>Roots Agency</strong>.</p>
             <p>Siège social : [Adresse à compléter], Brussels.</p>
-            <p>Contact : contact@postoptracker.com</p>
+            <p>Contact : contact@karefully.com</p>
         </section>
 
         <section>
             <h2>2. Hébergement</h2>
             <p>Le site est hébergé par [Nom de l'hébergeur], [Adresse de l'hébergeur].</p>
-            <p>Les données de santé sont hébergées sur des serveurs certifiés HDS (Hébergeur de Données de Santé).</p>
+            <p>Les données de santé sont hébergées sur une infrastructure conforme aux exigences d'hébergement des données de santé (HDS).</p>
         </section>
 
         <section>
             <h2>3. Propriété intellectuelle</h2>
-            <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+            <p>L'ensemble de ce site relève de la législation sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
         </section>
 
         <section>
             <h2>4. Données personnelles</h2>
-            <p>Pour plus d'informations sur la manière dont nous traitons vos données, veuillez consulter notre <a href="politique-confidentialite.html">Politique de Confidentialité</a>.</p>
+            <p>Pour plus d'informations sur la manière dont nous traitons vos données, veuillez consulter notre <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
         </section>
     </main>
 
-    <footer style="margin-top: 100px;">
-        <div class="container">
-            <p>© 2026 Réalisé par <strong>Roots Agency</strong></p>
+    <footer>
+        <div class="container footer-bottom" style="text-align: center; border: 0;">
+            <p>© 2026 Karefully · Édité par Roots Agency · Brussels</p>
         </div>
     </footer>
 </body>

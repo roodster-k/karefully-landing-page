@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité — PostOp Tracker</title>
+    <title>Politique de confidentialité — Karefully</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .legal-content { max-width: 800px; margin: 120px auto; padding: 0 5vw; }
-        .legal-content h1 { margin-bottom: 40px; }
-        .legal-content h2 { margin-top: 40px; margin-bottom: 20px; font-size: 24px; color: var(--primary); }
-        .legal-content p, .legal-content li { margin-bottom: 16px; color: var(--ink-muted); line-height: 1.7; }
-        .legal-content ul { margin-left: 20px; margin-bottom: 24px; }
+        .legal-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px clamp(20px, 4vw, 48px); background: rgba(247, 251, 249, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+        .legal-content { max-width: 800px; margin: 56px auto 96px; padding: 0 24px; }
+        .legal-content h1 { margin-bottom: 32px; }
+        .legal-content h2 { margin-top: 40px; margin-bottom: 14px; font-size: 1.4rem; color: var(--emerald-700); }
+        .legal-content p, .legal-content li { margin-bottom: 14px; color: var(--muted); }
+        .legal-content ul { margin-left: 20px; margin-bottom: 20px; }
+        .legal-content a { color: var(--emerald-700); }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="nav-logo">PostOp<span>Tracker</span></a>
-        <a href="index.html" class="nav-cta">Retour à l'accueil</a>
+    <nav class="legal-nav">
+        <a href="index.html" class="brand" aria-label="Karefully — accueil">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 100 100" width="30" height="30" fill="none"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="brand-name">karefully</span>
+        </a>
+        <a href="index.html" class="btn btn-ghost">Retour à l'accueil</a>
     </nav>
 
     <main class="legal-content">
-        <h1 class="serif">Politique de Confidentialité</h1>
-        
-        <p>Dernière mise à jour : 19 avril 2026</p>
+        <h1>Politique de confidentialité</h1>
+
+        <p>Dernière mise à jour : 8 juin 2026</p>
 
         <section>
             <h2>1. Introduction</h2>
-            <p>La protection de vos données personnelles est une priorité pour <strong>Roots Agency</strong>. Cette politique détaille comment nous collectons, utilisons et protégeons les informations dans le cadre de l'utilisation de <strong>PostOp Tracker</strong>.</p>
+            <p>La protection de vos données personnelles est une priorité pour <strong>Roots Agency</strong>. Cette politique détaille comment nous collectons, utilisons et protégeons les informations dans le cadre de l'utilisation de <strong>Karefully</strong>.</p>
         </section>
 
         <section>
-            <h2>2. Données de Santé (RGPD & HDS)</h2>
-            <p>PostOp Tracker traite des données de santé à caractère personnel. À ce titre, nous nous engageons à :</p>
+            <h2>2. Données de santé (RGPD &amp; HDS)</h2>
+            <p>Karefully traite des données de santé à caractère personnel. À ce titre, nous nous engageons à :</p>
             <ul>
-                <li>Héberger les données uniquement sur des serveurs certifiés <strong>HDS</strong>.</li>
-                <li>Garantir un chiffrement de bout en bout pour toutes les communications.</li>
+                <li>Héberger les données de santé sur une infrastructure conforme aux exigences <strong>HDS</strong>.</li>
+                <li>Garantir le chiffrement des données en transit et au repos.</li>
                 <li>Ne jamais revendre ni partager ces données avec des tiers non autorisés.</li>
             </ul>
         </section>
@@ -43,21 +54,21 @@
             <h2>3. Données collectées</h2>
             <p>Nous collectons les types d'informations suivants :</p>
             <ul>
-                <li><strong>Données d'identification</strong> : Nom, prénom, email du praticien.</li>
-                <li><strong>Données patient</strong> : Initiales, type d'intervention, photos de suivi, scores de douleur (VAS).</li>
-                <li><strong>Données techniques</strong> : Adresse IP, logs de connexion.</li>
+                <li><strong>Données d'identification</strong> : nom, prénom, e-mail du praticien.</li>
+                <li><strong>Données patient</strong> : initiales, type d'intervention, photos de suivi, scores de douleur.</li>
+                <li><strong>Données techniques</strong> : adresse IP, journaux de connexion.</li>
             </ul>
         </section>
 
         <section>
-            <h2>4. Vos Droits</h2>
-            <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Vous pouvez exercer ces droits en nous contactant à : contact@postoptracker.com.</p>
+            <h2>4. Vos droits</h2>
+            <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Vous pouvez exercer ces droits en nous contactant à : contact@karefully.com.</p>
         </section>
     </main>
 
-    <footer style="margin-top: 100px;">
-        <div class="container">
-            <p>© 2026 Réalisé par <strong>Roots Agency</strong></p>
+    <footer>
+        <div class="container footer-bottom" style="text-align: center; border: 0;">
+            <p>© 2026 Karefully · Édité par Roots Agency · Brussels</p>
         </div>
     </footer>
 </body>

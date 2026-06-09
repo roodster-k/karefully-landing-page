@@ -3,274 +3,627 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Active les animations d'apparition uniquement si JS est dispo (évite tout flash de contenu) -->
+    <script>document.documentElement.classList.add('js');</script>
+
     <!-- SEO -->
-    <title>PostOp Tracker — Suivi post-opératoire intelligent & structuré</title>
-    <meta name="description" content="Solution SaaS de suivi post-opératoire pour la chirurgie esthétique. Automatisez vos protocoles, sécurisez vos patients et libérez du temps médical.">
-    <link rel="canonical" href="https://postoptracker.com">
-    
+    <title>Karefully — Le suivi post-opératoire enfin structuré</title>
+    <meta name="description" content="Karefully centralise le suivi post-opératoire de vos patients : bilans quotidiens, détection précoce des complications et alertes en temps réel. La solution sécurisée pour chirurgiens et cliniques esthétiques.">
+    <meta name="theme-color" content="#5C7A6B">
+    <link rel="canonical" href="https://karefully.com">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Karefully — Le suivi post-opératoire enfin structuré">
+    <meta property="og:description" content="Bilans quotidiens, détection précoce des complications et alertes en temps réel. La solution de suivi post-op sécurisée pour chirurgiens et cliniques.">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://karefully.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo/png/favicon-mint-32px.png">
+    <link rel="apple-touch-icon" href="logo/png/favicon-mint-256px.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Karefully",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "description": "Solution de suivi post-opératoire pour chirurgiens et cliniques esthétiques : bilans quotidiens, détection précoce des complications et alertes en temps réel.",
+      "offers": { "@type": "Offer", "category": "SaaS" }
+    }
+    </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Aller au contenu</a>
 
-    <nav id="navbar">
-        <a href="#" class="nav-logo">PostOp<span>Tracker</span></a>
-        
-        <div class="nav-menu" id="navMenu">
-            <a href="#problems">Problèmes</a>
-            <a href="#benefits">Bénéfices</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact" class="nav-cta mobile-cta">Planifier une démo</a>
-        </div>
+    <!-- ===== NAVIGATION ===== -->
+    <header>
+        <nav id="navbar" aria-label="Navigation principale">
+            <a href="#" class="brand" aria-label="Karefully — accueil">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 100 100" width="34" height="34" fill="none">
+                        <path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="brand-name">karefully</span>
+            </a>
 
-        <button class="mobile-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <a href="#contact" class="nav-cta desktop-cta">Planifier une démo</a>
-    </nav>
+            <div class="nav-menu" id="navMenu">
+                <a href="#fonctionnement">Fonctionnement</a>
+                <a href="#fonctionnalites">Fonctionnalités</a>
+                <a href="#securite">Sécurité</a>
+                <a href="#tarifs">Tarifs</a>
+                <a href="#faq">FAQ</a>
+                <a href="#demo" class="btn btn-primary nav-cta mobile-cta">Demander une démo</a>
+            </div>
 
-    <main>
-        <!-- HERO -->
-        <section id="hero" class="section">
+            <a href="#demo" class="btn btn-primary nav-cta desktop-cta">Demander une démo</a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- ===== HERO ===== -->
+        <section id="hero">
             <div class="container hero-grid">
                 <div class="hero-content" data-reveal>
-                    <span class="badge">Innovation Médicale</span>
-                    <h1 class="title-xl">
-                        Le suivi post-op<br>
-                        <span class="text-gradient serif">enfin structuré.</span>
-                    </h1>
+                    <span class="badge">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        Suivi post-opératoire intelligent
+                    </span>
+                    <h1>Le suivi post-op,<br><span class="text-accent">enfin structuré.</span></h1>
                     <p class="subtitle">
-                        PostOp Tracker centralise le suivi de vos patients après chirurgie, automatise vos protocoles et vous alerte en temps réel — pour moins de chaos, plus de sécurité.
+                        Karefully centralise le suivi de vos patients après chirurgie, automatise vos protocoles et vous alerte au bon moment — pour moins de chaos, plus de sécurité.
                     </p>
                     <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary">Demander une démo</a>
-                        <a href="#benefits" class="btn btn-secondary">Voir les bénéfices</a>
+                        <a href="#demo" class="btn btn-primary btn-lg">Demander une démo</a>
+                        <a href="#fonctionnement" class="btn btn-ghost btn-lg">Voir comment ça marche</a>
                     </div>
+                    <ul class="trust-badges" aria-label="Garanties de conformité">
+                        <li>
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+                            Conforme RGPD
+                        </li>
+                        <li>
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg>
+                            Données de santé (HDS)
+                        </li>
+                        <li>
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Chiffrement de bout en bout
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="hero-visual" data-reveal>
-                    <div class="glass-box mockup-ui">
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px; border-bottom: 1px solid var(--ink-faint); padding-bottom: 16px;">
-                            <div style="width: 40px; height: 40px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">DH</div>
+                    <div class="mockup-dash">
+                        <div class="dash-head">
+                            <span class="avatar" aria-hidden="true">DH</span>
                             <div>
-                                <div style="font-weight: 600; font-size: 14px;">Dr Horn — Dashboard</div>
-                                <div style="font-size: 12px; color: var(--ink-muted);">Clinique Churchill · 12 patients</div>
+                                <div class="dash-title">Dr Horn — Tableau de bord</div>
+                                <div class="dash-sub">Clinique Churchill · 12 patients suivis</div>
                             </div>
+                            <span class="dash-live"><span class="badge-dot" aria-hidden="true"></span>En direct</span>
                         </div>
-                        
-                        <div style="font-size: 11px; color: var(--ink-muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Alertes prioritaires</div>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #fff5f5; border-radius: 12px; border: 1px solid #fed7d7;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <div style="width: 8px; height: 8px; background: #f56565; border-radius: 50%;"></div>
-                                    <div style="font-size: 13px; font-weight: 500;">Marie L. — Douleur VAS 7/10</div>
-                                </div>
-                                <span style="font-size: 11px; color: #c53030; font-weight: 700;">CRITIQUE</span>
-                            </div>
-                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: #fffaf0; border-radius: 12px; border: 1px solid #feebc8;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <div style="width: 8px; height: 8px; background: #ed8936; border-radius: 50%;"></div>
-                                    <div style="font-size: 13px; font-weight: 500;">Sophie R. — Photo attendue</div>
-                                </div>
-                                <span style="font-size: 11px; color: #c05621; font-weight: 700;">RAPPEL</span>
-                            </div>
-                        </div>
+                        <div class="dash-label">Alertes prioritaires</div>
+                        <ul class="alert-list">
+                            <li class="alert alert--critical">
+                                <span class="alert-dot" aria-hidden="true"></span>
+                                <span class="alert-text">Marie L. — Douleur signalée 7/10</span>
+                                <span class="alert-tag tag-critical">Critique</span>
+                            </li>
+                            <li class="alert alert--warn">
+                                <span class="alert-dot" aria-hidden="true"></span>
+                                <span class="alert-text">Sophie R. — Photo de cicatrice attendue</span>
+                                <span class="alert-tag tag-warn">Rappel</span>
+                            </li>
+                            <li class="alert alert--ok">
+                                <span class="alert-dot" aria-hidden="true"></span>
+                                <span class="alert-text">Julie M. — Bilan J+3 complété</span>
+                                <span class="alert-tag tag-ok">À jour</span>
+                            </li>
+                        </ul>
                     </div>
-                    
-                    <div class="floating-card">
-                        <div style="font-size: 10px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.8;">Notification Patient</div>
-                        <div style="font-weight: 500; font-size: 13px; line-height: 1.4;">"Votre protocole J+3 est maintenant disponible. Veuillez uploader vos photos."</div>
+                    <div class="floating-note" aria-hidden="true">
+                        <div class="fn-label">Notification patient</div>
+                        <p>« Votre bilan J+3 est disponible. Pensez à ajouter vos photos. »</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROBLEMS -->
-        <section id="problems" class="section">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 80px;" data-reveal>
-                    <span class="badge" style="background: rgba(46, 204, 113, 0.1); color: var(--secondary);">Le constat</span>
-                    <h2 class="title-lg">Ce que vivent la plupart<br>des chirurgiens plasticiens</h2>
-                    <p class="subtitle" style="margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.6);">Sans outil dédié, le suivi post-op repose sur des canaux non structurés — et les risques s'accumulent.</p>
+        <!-- ===== TRUST BAR ===== -->
+        <section class="trust-bar" aria-label="Conformité et sécurité">
+            <div class="container trust-bar-inner">
+                <p class="trust-bar-lead">Une exigence médicale, pas un canal informel</p>
+                <div class="trust-bar-items">
+                    <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg> RGPD</span>
+                    <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg> Hébergement HDS</span>
+                    <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Chiffrement</span>
+                    <span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg> Traçabilité médico-légale</span>
                 </div>
+            </div>
+        </section>
 
+        <!-- ===== PROBLÈME ===== -->
+        <section id="probleme" class="section section--dark">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="badge badge--light">Le constat</span>
+                    <h2>Ce que vivent la plupart<br>des chirurgiens plasticiens</h2>
+                    <p class="subtitle subtitle--center">Sans outil dédié, le suivi post-op repose sur des canaux non structurés — et les risques s'accumulent.</p>
+                </div>
                 <div class="grid-3">
-                    <div class="problem-card" data-reveal>
-                        <div class="problem-icon">💬</div>
-                        <h3 style="font-size: 20px; margin-bottom: 12px;">WhatsApp comme outil</h3>
-                        <p style="color: rgba(255,255,255,0.5); font-size: 15px;">Photos floues, messages perdus, disponibilité 24h/24 imposée. Un canal informel pour un enjeu médical critique.</p>
+                    <article class="problem-card" data-reveal>
+                        <span class="icon-chip icon-chip--danger" aria-hidden="true">
+                            <svg class="ico" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                        </span>
+                        <h3>WhatsApp comme outil</h3>
+                        <p>Photos floues, messages perdus, disponibilité imposée 24h/24. Un canal informel pour un enjeu médical critique.</p>
+                    </article>
+                    <article class="problem-card" data-reveal style="--d:.08s">
+                        <span class="icon-chip icon-chip--danger" aria-hidden="true">
+                            <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                        </span>
+                        <h3>Détection tardive</h3>
+                        <p>Sans protocole structuré, les signaux précoces passent entre les mailles. Une complication à J+3 devient une urgence à J+7.</p>
+                    </article>
+                    <article class="problem-card" data-reveal style="--d:.16s">
+                        <span class="icon-chip icon-chip--danger" aria-hidden="true">
+                            <svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9.5 12.5 5 5M14.5 12.5l-5 5"/></svg>
+                        </span>
+                        <h3>Zéro traçabilité</h3>
+                        <p>En cas de litige, les échanges informels ne valent rien. L'absence de dossier structuré expose directement le praticien.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COMMENT ÇA MARCHE ===== -->
+        <section id="fonctionnement" class="section">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="badge">Fonctionnement</span>
+                    <h2>Un suivi automatisé,<br>de la sortie de bloc au rétablissement</h2>
+                    <p class="subtitle subtitle--center">Karefully guide le patient et alerte votre équipe — vous n'intervenez que là où c'est nécessaire.</p>
+                </div>
+                <ol class="steps">
+                    <li class="step" data-reveal>
+                        <span class="step-num">1</span>
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+                        <h3>Le patient fait son bilan</h3>
+                        <p>Chaque jour, le patient renseigne sa douleur, ses symptômes et envoie ses photos depuis son téléphone.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:.08s">
+                        <span class="step-num">2</span>
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+                        <h3>Le protocole analyse</h3>
+                        <p>Les réponses sont comparées aux seuils de votre protocole, à chaque jalon clé du rétablissement.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:.16s">
+                        <span class="step-num">3</span>
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+                        <h3>Votre équipe est alertée</h3>
+                        <p>Toute anomalie déclenche une alerte priorisée sur le tableau de bord — sans bruit inutile.</p>
+                    </li>
+                    <li class="step" data-reveal style="--d:.24s">
+                        <span class="step-num">4</span>
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
+                        <h3>Vous intervenez, tracé</h3>
+                        <p>Échanges, décisions et photos sont consignés dans un dossier structuré et horodaté.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== FONCTIONNALITÉS ===== -->
+        <section id="fonctionnalites" class="section section--tint">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="badge">Fonctionnalités</span>
+                    <h2>Tout le suivi post-op,<br>au même endroit</h2>
+                    <p class="subtitle subtitle--center">Une plateforme pensée pour le quotidien des chirurgiens et de leurs équipes.</p>
+                </div>
+                <div class="grid-3 features">
+                    <article class="feature-card" data-reveal>
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+                        <h3>Bilan quotidien</h3>
+                        <p>Douleur (échelle 0-10), symptômes et photos multiples collectés automatiquement aux bons jalons.</p>
+                    </article>
+                    <article class="feature-card" data-reveal style="--d:.06s">
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+                        <h3>Photos & cicatrisation</h3>
+                        <p>Galerie photo horodatée par patient pour suivre l'évolution des cicatrices dans le temps.</p>
+                    </article>
+                    <article class="feature-card" data-reveal style="--d:.12s">
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+                        <h3>Alertes intelligentes</h3>
+                        <p>Détection précoce des complications et alertes priorisées dès qu'un seuil est dépassé.</p>
+                    </article>
+                    <article class="feature-card" data-reveal>
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span>
+                        <h3>Messagerie tracée</h3>
+                        <p>Un canal sécurisé avec accusés de lecture, qui remplace WhatsApp et reste consigné.</p>
+                    </article>
+                    <article class="feature-card" data-reveal style="--d:.06s">
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8M13 12h8M13 18h8"/></svg></span>
+                        <h3>Protocoles personnalisables</h3>
+                        <p>Adaptez les jalons et les questions à chaque type d'intervention que vous pratiquez.</p>
+                    </article>
+                    <article class="feature-card" data-reveal style="--d:.12s">
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M2 22h20"/><path d="M10 7h4M10 11h4M10 15h4"/></svg></span>
+                        <h3>Multi-cliniques & équipe</h3>
+                        <p>Gérez plusieurs structures, partagez les dossiers avec votre équipe et invitez des collaborateurs.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DOUBLE PORTAIL ===== -->
+        <section id="portails" class="section">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="badge">Deux portails, une continuité</span>
+                    <h2>Pensé pour le patient<br>et pour l'équipe médicale</h2>
+                    <p class="subtitle subtitle--center">Chaque utilisateur dispose d'une interface dédiée, simple et adaptée à son rôle.</p>
+                </div>
+
+                <div class="portal" data-reveal>
+                    <div class="tabs" role="tablist" aria-label="Choisir un portail">
+                        <button class="tab is-active" role="tab" id="tab-patient" aria-selected="true" aria-controls="panel-patient">
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18h.01"/></svg>
+                            Côté patient
+                        </button>
+                        <button class="tab" role="tab" id="tab-staff" aria-selected="false" aria-controls="panel-staff" tabindex="-1">
+                            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 12 0V4a2 2 0 0 0-2-2h-1a.3.3 0 1 0 .2.3"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
+                            Côté équipe médicale
+                        </button>
                     </div>
-                    <div class="problem-card" data-reveal style="transition-delay: 0.1s;">
-                        <div class="problem-icon">⚠️</div>
-                        <h3 style="font-size: 20px; margin-bottom: 12px;">Détection Tardive</h3>
-                        <p style="color: rgba(255,255,255,0.5); font-size: 15px;">Sans protocole structuré, les signaux précoces passent entre les mailles. Une complication à J+3 devient une urgence à J+7.</p>
+
+                    <div class="portal-panel is-active" id="panel-patient" role="tabpanel" aria-labelledby="tab-patient">
+                        <div class="portal-text">
+                            <h3>Un parcours rassurant, étape par étape</h3>
+                            <ul class="check-list">
+                                <li>Bilan quotidien guidé en quelques secondes</li>
+                                <li>Rappels automatiques, aucun rendez-vous oublié</li>
+                                <li>Consignes de récupération personnalisées par phase</li>
+                                <li>Bouton d'alerte en cas d'urgence ressentie</li>
+                            </ul>
+                            <a href="#demo" class="btn btn-primary">Demander une démo</a>
+                        </div>
+                        <div class="portal-visual">
+                            <div class="phone">
+                                <div class="phone-top">Mon rétablissement · J+3</div>
+                                <div class="phone-cta">Faire mon bilan du jour</div>
+                                <div class="phone-row"><span>Douleur</span><span class="pill">3 / 10</span></div>
+                                <div class="phone-row"><span>Photos</span><span class="pill pill--ok">Envoyées</span></div>
+                                <div class="phone-row"><span>Messages</span><span class="pill">1 nouveau</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="problem-card" data-reveal style="transition-delay: 0.2s;">
-                        <div class="problem-icon">📋</div>
-                        <h3 style="font-size: 20px; margin-bottom: 12px;">Zéro Traçabilité</h3>
-                        <p style="color: rgba(255,255,255,0.5); font-size: 15px;">En cas de litige, les échanges informels ne valent rien. L'absence de dossier structuré expose directement le praticien.</p>
+
+                    <div class="portal-panel" id="panel-staff" role="tabpanel" aria-labelledby="tab-staff" hidden>
+                        <div class="portal-text">
+                            <h3>Une vue claire sur tous vos patients</h3>
+                            <ul class="check-list">
+                                <li>Tableau de bord des alertes priorisées</li>
+                                <li>Fiche patient complète : bilans, photos, historique</li>
+                                <li>Messagerie tracée avec accusés de lecture</li>
+                                <li>Gestion d'équipe et de plusieurs cliniques</li>
+                            </ul>
+                            <a href="#demo" class="btn btn-primary">Demander une démo</a>
+                        </div>
+                        <div class="portal-visual">
+                            <div class="mockup-dash mockup-dash--mini">
+                                <div class="dash-label">File d'attente · veille</div>
+                                <ul class="alert-list">
+                                    <li class="alert alert--critical"><span class="alert-dot" aria-hidden="true"></span><span class="alert-text">Marie L. — VAS 7/10</span><span class="alert-tag tag-critical">Critique</span></li>
+                                    <li class="alert alert--warn"><span class="alert-dot" aria-hidden="true"></span><span class="alert-text">Sophie R. — Photo attendue</span><span class="alert-tag tag-warn">Rappel</span></li>
+                                    <li class="alert alert--ok"><span class="alert-dot" aria-hidden="true"></span><span class="alert-text">Julie M. — Bilan complété</span><span class="alert-tag tag-ok">À jour</span></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- BENEFITS -->
-        <section id="benefits" class="section">
+        <!-- ===== BÉNÉFICES ===== -->
+        <section id="benefices" class="section section--tint">
             <div class="container">
-                <div class="grid-2" style="margin-bottom: 80px; align-items: end;">
+                <div class="grid-2 bene-head">
                     <div data-reveal>
                         <span class="badge">Bénéfices</span>
-                        <h2 class="title-lg">Un outil conçu pour le<br><span class="text-gradient serif">chirurgien d'aujourd'hui.</span></h2>
+                        <h2>Plus de sécurité,<br><span class="text-accent">moins de charge mentale.</span></h2>
                     </div>
-                    <div data-reveal style="transition-delay: 0.1s;">
-                        <p class="subtitle" style="margin-bottom: 0;">PostOp Tracker s'intègre dans votre flux existant. Vos patients sont guidés automatiquement, votre équipe est alertée au bon moment.</p>
-                    </div>
+                    <p class="subtitle" data-reveal style="--d:.08s">Karefully s'intègre à votre flux existant. Vos patients sont guidés automatiquement, votre équipe est alertée au bon moment, et chaque échange est consigné.</p>
                 </div>
-
-                <div class="grid-2">
-                    <div class="card featured" data-reveal>
-                        <div style="font-size: 32px; margin-bottom: 24px;">🚀</div>
-                        <h3 style="font-size: 24px; margin-bottom: 16px;">Détection Précoce Dynamique</h3>
-                        <p style="opacity: 0.8;">Nos protocoles capturent la douleur (VAS), les photos et les symptômes aux jalons critiques. Toute anomalie déclenche une alerte immédiate.</p>
-                    </div>
-                    <div class="card" data-reveal style="transition-delay: 0.1s;">
-                        <div style="font-size: 32px; margin-bottom: 24px;">🧘</div>
-                        <h3 style="font-size: 24px; margin-bottom: 16px;">Sérénité Médicale</h3>
-                        <p class="subtitle" style="margin-bottom: 0;">Fini les messages à toute heure. Tout transite par un canal structuré. Vous intervenez uniquement là où c'est nécessaire.</p>
-                    </div>
+                <div class="grid-2 benefits">
+                    <article class="benefit-card" data-reveal>
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                        <h3>Du temps médical gagné</h3>
+                        <p>Fini les rappels manuels et les messages à toute heure : les tâches répétitives sont automatisées.</p>
+                    </article>
+                    <article class="benefit-card" data-reveal style="--d:.06s">
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg></span>
+                        <h3>Sérénité au quotidien</h3>
+                        <p>Vous n'intervenez que sur les cas qui le méritent vraiment. Le reste se déroule en autonomie.</p>
+                    </article>
+                    <article class="benefit-card" data-reveal style="--d:.12s">
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/><path d="m5 8 3 6c-.9.7-2.1.7-3 0z"/><path d="m16 8 3 6c-.9.7-2.1.7-3 0z"/><path d="M7 21h10"/></svg></span>
+                        <h3>Sécurité médico-légale</h3>
+                        <p>Un dossier structuré et horodaté qui vous protège en cas de litige ou de réclamation.</p>
+                    </article>
+                    <article class="benefit-card" data-reveal style="--d:.18s">
+                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>
+                        <h3>Une meilleure expérience patient</h3>
+                        <p>Des patients rassurés, guidés et écoutés — un suivi premium qui valorise votre pratique.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ -->
+        <!-- ===== SÉCURITÉ ===== -->
+        <section id="securite" class="section section--dark">
+            <div class="container">
+                <div class="grid-2 security-grid">
+                    <div class="security-intro" data-reveal>
+                        <span class="badge badge--light">Sécurité & conformité</span>
+                        <h2>Les données de santé<br>méritent le plus haut niveau.</h2>
+                        <p class="subtitle">La sécurité n'est pas une option dans le médical. Karefully est conçu autour de la protection des données de vos patients.</p>
+                        <a href="#demo" class="btn btn-primary">Parler à notre équipe</a>
+                    </div>
+                    <ul class="security-list" data-reveal style="--d:.08s">
+                        <li>
+                            <span class="icon-chip icon-chip--light" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                            <div><h3>Conforme RGPD</h3><p>Consentements horodatés, minimisation des données et droit à l'effacement.</p></div>
+                        </li>
+                        <li>
+                            <span class="icon-chip icon-chip--light" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg></span>
+                            <div><h3>Hébergement de Données de Santé</h3><p>Infrastructure conforme aux exigences d'hébergement des données de santé (HDS).</p></div>
+                        </li>
+                        <li>
+                            <span class="icon-chip icon-chip--light" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                            <div><h3>Chiffrement</h3><p>Données chiffrées en transit et au repos, avec contrôle d'accès strict par rôle.</p></div>
+                        </li>
+                        <li>
+                            <span class="icon-chip icon-chip--light" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></span>
+                            <div><h3>Traçabilité complète</h3><p>Chaque échange et décision est consigné et horodaté — un véritable dossier de preuve.</p></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TÉMOIGNAGES ===== -->
+        <!-- NOTE: témoignages à remplacer par de vrais verbatims autorisés avant mise en ligne. -->
+        <section id="temoignages" class="section">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="badge">Ils nous font confiance</span>
+                    <h2>Conçu avec et pour<br>des chirurgiens exigeants</h2>
+                </div>
+                <div class="grid-3">
+                    <figure class="quote-card" data-reveal>
+                        <div class="stars" aria-label="5 sur 5">★★★★★</div>
+                        <blockquote>« J'ai enfin arrêté WhatsApp. Mes patients sont mieux suivis et je dors plus tranquille. »</blockquote>
+                        <figcaption><span class="q-avatar" aria-hidden="true">AL</span><span><strong>Dr A. L.</strong><br>Chirurgien plasticien · Bruxelles</span></figcaption>
+                    </figure>
+                    <figure class="quote-card" data-reveal style="--d:.08s">
+                        <div class="stars" aria-label="5 sur 5">★★★★★</div>
+                        <blockquote>« La détection précoce nous a permis d'anticiper plusieurs complications. Un vrai filet de sécurité. »</blockquote>
+                        <figcaption><span class="q-avatar" aria-hidden="true">MC</span><span><strong>Dr M. C.</strong><br>Clinique esthétique · Genève</span></figcaption>
+                    </figure>
+                    <figure class="quote-card" data-reveal style="--d:.16s">
+                        <div class="stars" aria-label="5 sur 5">★★★★★</div>
+                        <blockquote>« Le dossier structuré me rassure énormément sur le plan médico-légal. »</blockquote>
+                        <figcaption><span class="q-avatar" aria-hidden="true">SR</span><span><strong>Dr S. R.</strong><br>Cabinet solo · Lyon</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TARIFS ===== -->
+        <section id="tarifs" class="section section--tint">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="badge">Tarifs</span>
+                    <h2>Une offre adaptée<br>à votre structure</h2>
+                    <p class="subtitle subtitle--center">Tarification sur mesure selon votre volume de patients et le nombre de praticiens.</p>
+                </div>
+                <div class="grid-3 pricing">
+                    <article class="price-card" data-reveal>
+                        <h3>Cabinet solo</h3>
+                        <p class="price-desc">Pour le chirurgien indépendant qui veut sécuriser son suivi.</p>
+                        <div class="price"><span class="price-amount">Sur devis</span></div>
+                        <ul class="check-list">
+                            <li>1 praticien</li>
+                            <li>Bilans & alertes illimités</li>
+                            <li>Messagerie sécurisée</li>
+                            <li>Support par e-mail</li>
+                        </ul>
+                        <a href="#demo" class="btn btn-ghost">Demander un devis</a>
+                    </article>
+                    <article class="price-card price-card--featured" data-reveal style="--d:.08s">
+                        <span class="price-tag">Le plus choisi</span>
+                        <h3>Cabinet de groupe</h3>
+                        <p class="price-desc">Pour les équipes et cliniques qui suivent plusieurs praticiens.</p>
+                        <div class="price"><span class="price-amount">Sur devis</span></div>
+                        <ul class="check-list">
+                            <li>Plusieurs praticiens & équipe</li>
+                            <li>Protocoles personnalisés</li>
+                            <li>Gestion multi-cliniques</li>
+                            <li>Support prioritaire</li>
+                        </ul>
+                        <a href="#demo" class="btn btn-primary">Demander un devis</a>
+                    </article>
+                    <article class="price-card" data-reveal style="--d:.16s">
+                        <h3>Établissement</h3>
+                        <p class="price-desc">Pour les hôpitaux et grands centres aux besoins spécifiques.</p>
+                        <div class="price"><span class="price-amount">Sur mesure</span></div>
+                        <ul class="check-list">
+                            <li>Déploiement dédié</li>
+                            <li>Intégrations & SSO</li>
+                            <li>Engagement de service (SLA)</li>
+                            <li>Accompagnement dédié</li>
+                        </ul>
+                        <a href="#demo" class="btn btn-ghost">Nous contacter</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
         <section id="faq" class="section">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 60px;" data-reveal>
+            <div class="container container--narrow">
+                <div class="section-head" data-reveal>
                     <span class="badge">FAQ</span>
-                    <h2 class="title-lg">Questions Fréquentes</h2>
-                    <p class="subtitle" style="margin-left: auto; margin-right: auto;">Tout ce que vous devez savoir sur PostOp Tracker et la sécurité de vos données.</p>
+                    <h2>Questions fréquentes</h2>
+                    <p class="subtitle subtitle--center">Tout ce que vous devez savoir sur Karefully et la sécurité de vos données.</p>
                 </div>
-
-                <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq">
                     <div class="faq-item" data-reveal>
-                        <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Comment le système détecte-t-il une complication ?</h3>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-body">
-                            <p>Le système utilise des protocoles dynamiques qui capturent la douleur (VAS), les photos et les symptômes aux jalons critiques. Si un patient signale une anomalie ou dépasse un seuil de douleur (ex: VAS 7/10), une alerte est immédiatement envoyée sur votre tableau de bord chirurgien.</p>
-                        </div>
+                        <button class="faq-header" aria-expanded="false">
+                            <span>Comment le système détecte-t-il une complication ?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body"><p>Karefully utilise des protocoles dynamiques qui capturent la douleur, les photos et les symptômes aux jalons critiques. Si un patient signale une anomalie ou dépasse un seuil (par ex. douleur 7/10), une alerte priorisée apparaît immédiatement sur votre tableau de bord.</p></div>
                     </div>
-
-                    <div class="faq-item" data-reveal style="transition-delay: 0.1s;">
-                        <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Puis-je centraliser tout mon suivi et arrêter WhatsApp ?</h3>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-body">
-                            <p>C'est l'objectif principal. PostOp Tracker remplace les échanges informels et risqués sur WhatsApp par un canal sécurisé, structuré et traçable. Vous gagnez en sérénité et disposez d'un dossier médico-légal complet en cas de besoin.</p>
-                        </div>
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-header" aria-expanded="false">
+                            <span>Puis-je centraliser tout mon suivi et arrêter WhatsApp ?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body"><p>C'est l'objectif. Karefully remplace les échanges informels et risqués par un canal sécurisé, structuré et traçable. Vous gagnez en sérénité et disposez d'un dossier complet en cas de besoin.</p></div>
                     </div>
-
-                    <div class="faq-item" data-reveal style="transition-delay: 0.2s;">
-                        <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>L'outil est-il adapté aux chirurgiens en cabinet solo ?</h3>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-body">
-                            <p>Oui, parfaitement. PostOp Tracker agit comme un assistant numérique. Il automatise les rappels et la collecte de données, ce qui permet à un chirurgien solo de gérer un volume important de patients avec une sécurité optimale sans personnel supplémentaire.</p>
-                        </div>
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-header" aria-expanded="false">
+                            <span>L'outil est-il adapté à un cabinet solo ?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body"><p>Oui. Karefully agit comme un assistant numérique : il automatise les rappels et la collecte de données, ce qui permet à un chirurgien solo de suivre un volume important de patients en toute sécurité, sans personnel supplémentaire.</p></div>
                     </div>
-
-                    <div class="faq-item" data-reveal style="transition-delay: 0.3s;">
-                        <div class="faq-header" onclick="toggleFaq(this)">
-                            <h3>Mes données et celles de mes patients sont-elles protégées ?</h3>
-                            <span class="faq-icon">+</span>
-                        </div>
-                        <div class="faq-body">
-                            <p>La sécurité est au cœur de notre solution. PostOp Tracker est conforme au RGPD et toutes les données de santé sont hébergées sur des serveurs certifiés <strong>HDS</strong> (Hébergeur de Données de Santé) avec un chiffrement de niveau bancaire.</p>
-                        </div>
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-header" aria-expanded="false">
+                            <span>Mes données et celles de mes patients sont-elles protégées ?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body"><p>La sécurité est au cœur de la solution. Karefully est conforme au RGPD, les données de santé sont hébergées sur une infrastructure conforme HDS, et tout est chiffré en transit et au repos avec un contrôle d'accès strict par rôle.</p></div>
+                    </div>
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-header" aria-expanded="false">
+                            <span>Combien de temps pour démarrer ?</span>
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-body"><p>La mise en route est rapide. Après une démo, nous configurons vos protocoles selon vos types d'interventions et accompagnons votre équipe lors des premiers patients.</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 60px;" data-reveal>
-                    <span class="badge" style="background: rgba(255,255,255,0.1); color: white;">Contact</span>
-                    <h2 class="title-lg">Prêt à transformer votre suivi ?</h2>
-                    <p class="subtitle" style="margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.6);">Réservez une démo personnalisée de 30 minutes avec nos experts.</p>
+        <!-- ===== CTA / DÉMO ===== -->
+        <section id="demo" class="section section--dark">
+            <div class="container container--narrow">
+                <div class="section-head" data-reveal>
+                    <span class="badge badge--light">Demander une démo</span>
+                    <h2>Prêt à transformer<br>votre suivi post-op ?</h2>
+                    <p class="subtitle subtitle--center">Réservez une démo personnalisée de 30 minutes avec notre équipe.</p>
                 </div>
 
-                <div class="form-container" data-reveal>
+                <form class="form-card" id="demoForm" novalidate data-reveal>
                     <div id="form-content">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div class="form-row">
                             <div class="input-group">
-                                <label class="input-label" for="fname">Prénom</label>
-                                <input type="text" id="fname" placeholder="Jean">
+                                <label for="fname">Prénom</label>
+                                <input type="text" id="fname" name="fname" autocomplete="given-name" placeholder="Jean" required>
                             </div>
                             <div class="input-group">
-                                <label class="input-label" for="lname">Nom</label>
-                                <input type="text" id="lname" placeholder="Dupont">
+                                <label for="lname">Nom</label>
+                                <input type="text" id="lname" name="lname" autocomplete="family-name" placeholder="Dupont" required>
                             </div>
                         </div>
                         <div class="input-group">
-                            <label class="input-label" for="email">Email Professionnel</label>
-                            <input type="email" id="email" placeholder="j.dupont@clinique.be">
+                            <label for="email">E-mail professionnel</label>
+                            <input type="email" id="email" name="email" autocomplete="email" placeholder="j.dupont@clinique.be" required>
                         </div>
                         <div class="input-group">
-                            <label class="input-label" for="structure">Type de Structure</label>
-                            <select id="structure">
-                                <option value="">Sélectionner...</option>
+                            <label for="structure">Type de structure</label>
+                            <select id="structure" name="structure" required>
+                                <option value="">Sélectionner…</option>
                                 <option>Cabinet chirurgical solo</option>
-                                <option>Cabinet en groupe</option>
+                                <option>Cabinet de groupe</option>
                                 <option>Clinique esthétique</option>
                                 <option>Hôpital / Établissement public</option>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label class="input-label" for="message">Commentaires (Optionnel)</label>
-                            <textarea id="message" rows="4" placeholder="Vos défis actuels..."></textarea>
+                            <label for="message">Commentaires (optionnel)</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Vos défis actuels…"></textarea>
                         </div>
-                        <button class="btn btn-primary form-submit" style="width: 100%;" onclick="submitForm()">Envoyer ma demande →</button>
-                        <p style="text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 16px;">Réponse en moins de 24h · Garanti sans spam</p>
+                        <p class="form-status" id="formStatus" role="alert" aria-live="assertive"></p>
+                        <button type="submit" class="btn btn-primary btn-block form-submit">Envoyer ma demande</button>
+                        <p class="form-fineprint">Réponse en moins de 24h · Garanti sans spam</p>
                     </div>
 
-                    <div id="success-msg" style="display: none; text-align: center; padding: 40px 0;">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 32px;">✓</div>
-                        <h3 class="serif" style="font-size: 28px; margin-bottom: 12px;">Demande reçue</h3>
-                        <p style="color: rgba(255,255,255,0.6);">Notre équipe vous recontactera très prochainement pour fixer un rendez-vous.</p>
+                    <div id="success-msg" class="form-success" hidden>
+                        <span class="success-check" aria-hidden="true">
+                            <svg class="ico" viewBox="0 0 24 24"><path d="m5 13 4 4L19 7"/></svg>
+                        </span>
+                        <h3>Demande reçue</h3>
+                        <p>Notre équipe vous recontactera très prochainement pour fixer un rendez-vous.</p>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <div class="container">
-            <a href="#" class="nav-logo" style="justify-content: center; margin-bottom: 24px;">PostOp<span>Tracker</span></a>
-            <p><strong>PostOp Tracker</strong> — Solution SaaS de suivi post-opératoire premium.</p>
-            <p style="margin-top: 12px; font-size: 13px; color: rgba(255,255,255,0.4);">
-                <a href="mentions-legales.html" style="color: inherit; text-decoration: none; margin: 0 10px;">Mentions Légales</a> | 
-                <a href="politique-confidentialite.html" style="color: inherit; text-decoration: none; margin: 0 10px;">Confidentialité</a> | 
-                <a href="conditions-generales.html" style="color: inherit; text-decoration: none; margin: 0 10px;">CGU/CGV</a>
-            </p>
-            <p style="margin-top: 24px; opacity: 0.6;">© 2026 Réalisé par <strong>Roots Agency</strong> · Brussels · contact@postoptracker.com</p>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <a href="#" class="brand" aria-label="Karefully — accueil">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 100 100" width="30" height="30" fill="none">
+                            <path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="brand-name">karefully</span>
+                </a>
+                <p>Le suivi post-opératoire enfin structuré, sécurisé et serein.</p>
+            </div>
+            <nav class="footer-links" aria-label="Liens de pied de page">
+                <a href="#fonctionnalites">Fonctionnalités</a>
+                <a href="#securite">Sécurité</a>
+                <a href="#tarifs">Tarifs</a>
+                <a href="#demo">Demander une démo</a>
+            </nav>
+            <nav class="footer-legal" aria-label="Mentions légales">
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="politique-confidentialite.html">Confidentialité</a>
+                <a href="conditions-generales.html">CGU/CGV</a>
+            </nav>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Karefully · contact@karefully.com</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>

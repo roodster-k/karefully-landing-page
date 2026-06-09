@@ -3,43 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditions Générales — PostOp Tracker</title>
+    <title>Conditions générales — Karefully</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .legal-content { max-width: 800px; margin: 120px auto; padding: 0 5vw; }
-        .legal-content h1 { margin-bottom: 40px; }
-        .legal-content h2 { margin-top: 40px; margin-bottom: 20px; font-size: 24px; color: var(--primary); }
-        .legal-content p { margin-bottom: 16px; color: var(--ink-muted); line-height: 1.7; }
+        .legal-nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px clamp(20px, 4vw, 48px); background: rgba(247, 251, 249, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+        .legal-content { max-width: 800px; margin: 56px auto 96px; padding: 0 24px; }
+        .legal-content h1 { margin-bottom: 32px; }
+        .legal-content h2 { margin-top: 40px; margin-bottom: 14px; font-size: 1.4rem; color: var(--emerald-700); }
+        .legal-content p, .legal-content li { margin-bottom: 14px; color: var(--muted); }
+        .legal-content a { color: var(--emerald-700); }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="nav-logo">PostOp<span>Tracker</span></a>
-        <a href="index.html" class="nav-cta">Retour à l'accueil</a>
+    <nav class="legal-nav">
+        <a href="index.html" class="brand" aria-label="Karefully — accueil">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 100 100" width="30" height="30" fill="none"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="brand-name">karefully</span>
+        </a>
+        <a href="index.html" class="btn btn-ghost">Retour à l'accueil</a>
     </nav>
 
     <main class="legal-content">
-        <h1 class="serif">Conditions Générales d'Utilisation</h1>
-        
+        <h1>Conditions générales d'utilisation</h1>
+
         <section>
             <h2>1. Objet</h2>
-            <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition des services du site PostOp Tracker, ci-après nommé « le Service » et les conditions d'utilisation du Service par l'Utilisateur.</p>
+            <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition des services de <strong>Karefully</strong>, ci-après nommé « le Service », et les conditions d'utilisation du Service par l'Utilisateur.</p>
         </section>
 
         <section>
             <h2>2. Accès au service</h2>
-            <p>Le Service est accessible gratuitement à tout Utilisateur disposant d'un accès à internet. Tous les coûts afférents à l'accès au Service sont exclusivement à la charge de l'Utilisateur.</p>
+            <p>Le Service est accessible aux professionnels de santé et à leurs patients disposant d'un accès à internet. Tous les coûts afférents à l'accès au Service (matériel, connexion) sont à la charge de l'Utilisateur.</p>
         </section>
 
         <section>
             <h2>3. Responsabilité</h2>
-            <p>PostOp Tracker est un outil d'aide au suivi et ne se substitue en aucun cas au jugement clinique du chirurgien. La responsabilité de Roots Agency ne saurait être engagée en cas de diagnostic erroné ou de complication médicale non détectée.</p>
+            <p>Karefully est un outil d'aide au suivi et ne se substitue en aucun cas au jugement clinique du chirurgien. La responsabilité de Roots Agency ne saurait être engagée en cas de diagnostic erroné ou de complication médicale non détectée.</p>
         </section>
     </main>
 
-    <footer style="margin-top: 100px;">
-        <div class="container">
-            <p>© 2026 Réalisé par <strong>Roots Agency</strong></p>
+    <footer>
+        <div class="container footer-bottom" style="text-align: center; border: 0;">
+            <p>© 2026 Karefully · Édité par Roots Agency · Brussels</p>
         </div>
     </footer>
 </body>

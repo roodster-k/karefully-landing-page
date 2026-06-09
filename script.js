@@ -1,118 +1,144 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Reveal Animations on Scroll ---
-    const revealElements = document.querySelectorAll('[data-reveal]');
-    
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                // Optional: stop observing once revealed
-                // revealObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- Mobile Menu Toggle ---
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const menuLinks = document.querySelectorAll('.nav-menu a');
-
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
+    /* ---------- Reveal on scroll ---------- */
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach((el) => obs.observe(el));
+    } else {
+        revealEls.forEach((el) => el.classList.add('revealed'));
     }
 
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.classList.remove('menu-open');
+    /* ---------- Navbar shadow on scroll ---------- */
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* ---------- Mobile menu ---------- */
+    const toggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('navMenu');
+    const closeMenu = () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    };
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('active');
+            toggle.classList.toggle('active', open);
+            document.body.classList.toggle('menu-open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
         });
-    });
+        menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    }
 
-    // --- Navbar Blur on Scroll ---
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            nav.style.background = 'rgba(253, 250, 245, 0.9)';
-            nav.style.boxShadow = 'var(--shadow-premium)';
-        } else {
-            nav.style.background = 'rgba(253, 250, 245, 0.8)';
-            nav.style.boxShadow = 'none';
-        }
-    });
-
-    // --- Form Handling ---
-    const formContent = document.getElementById('form-content');
-    const successMsg = document.getElementById('success-msg');
-    const submitBtn = document.querySelector('.form-submit');
-
-    window.submitForm = () => {
-        const requiredFields = ['fname', 'lname', 'email', 'structure'];
-        let isValid = true;
-        
-        const data = {};
-        
-        requiredFields.forEach(id => {
-            const el = document.getElementById(id);
-            if (!el.value.trim()) {
-                el.style.borderColor = '#ef4444';
-                isValid = false;
-            } else {
-                el.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                data[id] = el.value.trim();
+    /* ---------- FAQ accordion ---------- */
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+        const header = item.querySelector('.faq-header');
+        const body = item.querySelector('.faq-body');
+        header.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+            faqItems.forEach((other) => {
+                other.classList.remove('active');
+                other.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
+                other.querySelector('.faq-body').style.maxHeight = null;
+            });
+            if (!isOpen) {
+                item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+                body.style.maxHeight = body.scrollHeight + 'px';
             }
         });
+    });
 
-        if (!isValid) {
-            showNotification('Veuillez remplir tous les champs obligatoires.', 'error');
-            return;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            document.getElementById('email').style.borderColor = '#ef4444';
-            showNotification('Veuillez entrer une adresse email valide.', 'error');
-            return;
-        }
-
-        // Simulate API call
-        submitBtn.innerHTML = 'Traitement en cours...';
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-            formContent.style.display = 'none';
-            successMsg.style.display = 'block';
-            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 1500);
+    /* ---------- Portal tabs ---------- */
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const activateTab = (tab) => {
+        tabs.forEach((t) => {
+            const selected = t === tab;
+            t.classList.toggle('is-active', selected);
+            t.setAttribute('aria-selected', String(selected));
+            t.tabIndex = selected ? 0 : -1;
+            const panel = document.getElementById(t.getAttribute('aria-controls'));
+            if (panel) {
+                panel.classList.toggle('is-active', selected);
+                panel.hidden = !selected;
+            }
+        });
     };
+    tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => activateTab(tab));
+        tab.addEventListener('keydown', (e) => {
+            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+            e.preventDefault();
+            const next = e.key === 'ArrowRight' ? (i + 1) % tabs.length : (i - 1 + tabs.length) % tabs.length;
+            tabs[next].focus();
+            activateTab(tabs[next]);
+        });
+    });
 
-    function showNotification(message, type = 'info') {
-        // Simple alert for now, could be a toast system
-        alert(message);
+    /* ---------- Demo form ---------- */
+    const form = document.getElementById('demoForm');
+    if (form) {
+        const status = document.getElementById('formStatus');
+        const content = document.getElementById('form-content');
+        const success = document.getElementById('success-msg');
+        const submitBtn = form.querySelector('.form-submit');
+        const required = ['fname', 'lname', 'email', 'structure'];
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            status.textContent = '';
+            let firstInvalid = null;
+
+            required.forEach((id) => {
+                const el = document.getElementById(id);
+                const empty = !el.value.trim();
+                el.classList.toggle('invalid', empty);
+                if (empty && !firstInvalid) firstInvalid = el;
+            });
+
+            if (firstInvalid) {
+                status.textContent = 'Veuillez remplir tous les champs obligatoires.';
+                firstInvalid.focus();
+                return;
+            }
+
+            const email = document.getElementById('email');
+            if (!emailRe.test(email.value.trim())) {
+                email.classList.add('invalid');
+                status.textContent = 'Veuillez entrer une adresse e-mail valide.';
+                email.focus();
+                return;
+            }
+
+            // Simulation d'envoi (à brancher sur votre back-end / e-mail)
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours…';
+            setTimeout(() => {
+                content.hidden = true;
+                success.hidden = false;
+                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1200);
+        });
+
+        // Retire l'état d'erreur dès que l'utilisateur corrige
+        form.querySelectorAll('input, select, textarea').forEach((el) => {
+            el.addEventListener('input', () => el.classList.remove('invalid'));
+        });
     }
 });
-
-// --- FAQ Accordion ---
-function toggleFaq(header) {
-    const item = header.parentElement;
-    const isActive = item.classList.contains('active');
-    
-    // Close all other items
-    document.querySelectorAll('.faq-item').forEach(el => {
-        el.classList.remove('active');
-    });
-    
-    // Toggle current item
-    if (!isActive) {
-        item.classList.add('active');
-    }
-}

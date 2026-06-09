@@ -1,5 +1,5 @@
-# robots.txt for PostOp Tracker
+# robots.txt for Karefully
 User-agent: *
 Allow: /
 
-Sitemap: https://postoptracker.com/sitemap.xml
+Sitemap: https://karefully.com/sitemap.xml
