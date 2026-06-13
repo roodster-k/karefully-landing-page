@@ -90,55 +90,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ---------- Demo form ---------- */
-    const form = document.getElementById('demoForm');
-    if (form) {
-        const status = document.getElementById('formStatus');
-        const content = document.getElementById('form-content');
-        const success = document.getElementById('success-msg');
-        const submitBtn = form.querySelector('.form-submit');
-        const required = ['fname', 'lname', 'email', 'structure'];
-        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    /* ---------- Carousel du hero ---------- */
+    const hc = document.getElementById('heroCarousel');
+    if (hc) {
+        const track = hc.querySelector('.hc-track');
+        const slides = Array.from(hc.querySelectorAll('.hc-slide'));
+        const dots = Array.from(hc.querySelectorAll('.hc-dot'));
+        const prevBtn = hc.querySelector('.hc-prev');
+        const nextBtn = hc.querySelector('.hc-next');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const AUTOPLAY = 5500;
+        let index = 0;
+        let timer = null;
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            status.textContent = '';
-            let firstInvalid = null;
-
-            required.forEach((id) => {
-                const el = document.getElementById(id);
-                const empty = !el.value.trim();
-                el.classList.toggle('invalid', empty);
-                if (empty && !firstInvalid) firstInvalid = el;
+        const update = () => {
+            track.style.transform = `translateX(${-index * 100}%)`;
+            dots.forEach((d, i) => {
+                d.classList.toggle('is-active', i === index);
+                d.setAttribute('aria-current', i === index ? 'true' : 'false');
             });
+            slides.forEach((s, i) => s.setAttribute('aria-hidden', i === index ? 'false' : 'true'));
+        };
+        const goTo = (i) => { index = (i + slides.length) % slides.length; update(); };
+        const next = () => goTo(index + 1);
+        const prev = () => goTo(index - 1);
 
-            if (firstInvalid) {
-                status.textContent = 'Veuillez remplir tous les champs obligatoires.';
-                firstInvalid.focus();
-                return;
-            }
+        const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+        const start = () => { if (reduce) return; stop(); timer = setInterval(next, AUTOPLAY); };
 
-            const email = document.getElementById('email');
-            if (!emailRe.test(email.value.trim())) {
-                email.classList.add('invalid');
-                status.textContent = 'Veuillez entrer une adresse e-mail valide.';
-                email.focus();
-                return;
-            }
+        nextBtn.addEventListener('click', () => { next(); start(); });
+        prevBtn.addEventListener('click', () => { prev(); start(); });
+        dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); start(); }));
 
-            // Simulation d'envoi (à brancher sur votre back-end / e-mail)
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Envoi en cours…';
-            setTimeout(() => {
-                content.hidden = true;
-                success.hidden = false;
-                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 1200);
+        hc.addEventListener('mouseenter', stop);
+        hc.addEventListener('mouseleave', start);
+        hc.addEventListener('focusin', stop);
+        hc.addEventListener('focusout', start);
+        hc.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') { prev(); start(); }
+            else if (e.key === 'ArrowRight') { next(); start(); }
         });
 
-        // Retire l'état d'erreur dès que l'utilisateur corrige
-        form.querySelectorAll('input, select, textarea').forEach((el) => {
-            el.addEventListener('input', () => el.classList.remove('invalid'));
-        });
+        let touchX = null;
+        hc.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
+        hc.addEventListener('touchend', (e) => {
+            if (touchX === null) return;
+            const dx = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+            touchX = null;
+            start();
+        }, { passive: true });
+
+        document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+
+        update();
+        start();
+    }
+
+    /* ---------- Bouton flottant : masqué quand la section « Réserver » OU le footer est visible ---------- */
+    const fab = document.getElementById('fabReserver');
+    const reserver = document.getElementById('reserver');
+    const footer = document.querySelector('footer');
+    if (fab && reserver && 'IntersectionObserver' in window) {
+        const visible = new Set();
+        const fabObs = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) visible.add(entry.target);
+                else visible.delete(entry.target);
+            });
+            fab.classList.toggle('is-hidden', visible.size > 0);
+        }, { threshold: 0 });
+        fabObs.observe(reserver);
+        if (footer) fabObs.observe(footer);
     }
 });
