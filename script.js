@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ---------- Mobile menu ---------- */
     const toggle = document.getElementById('mobileToggle');
     const menu = document.getElementById('navMenu');
+    const scrim = document.getElementById('navScrim');
     const closeMenu = () => {
         toggle.classList.remove('active');
         menu.classList.remove('active');
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
         });
         menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+        if (scrim) scrim.addEventListener('click', closeMenu); /* [10] clic sur l'overlay ferme le menu */
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     }
 
@@ -151,7 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const fab = document.getElementById('fabReserver');
     const reserver = document.getElementById('reserver');
     const footer = document.querySelector('footer');
-    if (fab && reserver && 'IntersectionObserver' in window) {
+    const fabTargets = [reserver, footer].filter(Boolean);
+    if (fab && fabTargets.length && 'IntersectionObserver' in window) {
         const visible = new Set();
         const fabObs = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -160,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             fab.classList.toggle('is-hidden', visible.size > 0);
         }, { threshold: 0 });
-        fabObs.observe(reserver);
-        if (footer) fabObs.observe(footer);
+        fabTargets.forEach((t) => fabObs.observe(t));
     }
 });
