@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ---------- Reveal on scroll ---------- */
+    /* ---------- Icônes Lucide ---------- */
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+    }
+
+    /* ---------- Reveal au chargement / scroll ---------- */
     const revealEls = document.querySelectorAll('[data-reveal]');
     if ('IntersectionObserver' in window) {
         const obs = new IntersectionObserver((entries) => {
@@ -16,13 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
         revealEls.forEach((el) => el.classList.add('revealed'));
     }
 
-    /* ---------- Navbar shadow on scroll ---------- */
-    const navbar = document.getElementById('navbar');
-    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 10);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    /* ---------- Maquette hero : alertes en cascade (déclenchées au chargement) ---------- */
+    const heroMock = document.getElementById('heroMock');
+    if (heroMock) {
+        requestAnimationFrame(() => heroMock.classList.add('is-live'));
+    }
 
-    /* ---------- Mobile menu ---------- */
+    /* ---------- Ombre de la navbar au scroll ---------- */
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 10);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    /* ---------- Menu mobile (tiroir) ---------- */
     const toggle = document.getElementById('mobileToggle');
     const menu = document.getElementById('navMenu');
     const scrim = document.getElementById('navScrim');
@@ -42,11 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
         });
         menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
-        if (scrim) scrim.addEventListener('click', closeMenu); /* [10] clic sur l'overlay ferme le menu */
+        if (scrim) scrim.addEventListener('click', closeMenu);
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
     }
 
-    /* ---------- FAQ accordion ---------- */
+    /* ---------- Accordéon FAQ ---------- */
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach((item) => {
         const header = item.querySelector('.faq-header');
@@ -66,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ---------- Portal tabs ---------- */
+    /* ---------- Onglets des portails ---------- */
     const tabs = Array.from(document.querySelectorAll('.tab'));
     const activateTab = (tab) => {
         tabs.forEach((t) => {
@@ -92,64 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ---------- Carousel du hero ---------- */
-    const hc = document.getElementById('heroCarousel');
-    if (hc) {
-        const track = hc.querySelector('.hc-track');
-        const slides = Array.from(hc.querySelectorAll('.hc-slide'));
-        const dots = Array.from(hc.querySelectorAll('.hc-dot'));
-        const prevBtn = hc.querySelector('.hc-prev');
-        const nextBtn = hc.querySelector('.hc-next');
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const AUTOPLAY = 5500;
-        let index = 0;
-        let timer = null;
-
-        const update = () => {
-            track.style.transform = `translateX(${-index * 100}%)`;
-            dots.forEach((d, i) => {
-                d.classList.toggle('is-active', i === index);
-                d.setAttribute('aria-current', i === index ? 'true' : 'false');
-            });
-            slides.forEach((s, i) => s.setAttribute('aria-hidden', i === index ? 'false' : 'true'));
-        };
-        const goTo = (i) => { index = (i + slides.length) % slides.length; update(); };
-        const next = () => goTo(index + 1);
-        const prev = () => goTo(index - 1);
-
-        const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
-        const start = () => { if (reduce) return; stop(); timer = setInterval(next, AUTOPLAY); };
-
-        nextBtn.addEventListener('click', () => { next(); start(); });
-        prevBtn.addEventListener('click', () => { prev(); start(); });
-        dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); start(); }));
-
-        hc.addEventListener('mouseenter', stop);
-        hc.addEventListener('mouseleave', start);
-        hc.addEventListener('focusin', stop);
-        hc.addEventListener('focusout', start);
-        hc.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') { prev(); start(); }
-            else if (e.key === 'ArrowRight') { next(); start(); }
-        });
-
-        let touchX = null;
-        hc.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; stop(); }, { passive: true });
-        hc.addEventListener('touchend', (e) => {
-            if (touchX === null) return;
-            const dx = e.changedTouches[0].clientX - touchX;
-            if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
-            touchX = null;
-            start();
-        }, { passive: true });
-
-        document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
-
-        update();
-        start();
-    }
-
-    /* ---------- Bouton flottant : masqué quand la section « Réserver » OU le footer est visible ---------- */
+    /* ---------- Bouton flottant : masqué sur « Réserver » ou le footer ---------- */
     const fab = document.getElementById('fabReserver');
     const reserver = document.getElementById('reserver');
     const footer = document.querySelector('footer');
