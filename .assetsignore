@@ -1,0 +1,5 @@
+# Fichiers à ne pas servir publiquement (déploiement Cloudflare Workers)
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc

@@ -1,0 +1,10 @@
+{
+  // Déploiement Cloudflare Workers — site 100 % statique servi en « assets-only »
+  // (aucun script Worker : Wrangler sert directement les fichiers du dossier).
+  // Le nom doit correspondre au projet Workers existant.
+  "name": "post-op-tracker-landing",
+  "compatibility_date": "2026-06-15",
+  "assets": {
+    "directory": "."
+  }
+}
