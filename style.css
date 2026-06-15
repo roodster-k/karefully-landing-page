@@ -81,12 +81,8 @@ body {
     line-height: 1.65;
     color: var(--ink);
     background-color: var(--cream);
-    /* Fond signature : deux blooms radiaux discrets (coral haut-gauche, sage haut-droite) */
-    background-image:
-        radial-gradient(62% 52% at 8% -4%, rgba(216, 138, 110, 0.16), transparent 60%),
-        radial-gradient(54% 46% at 96% 0%, rgba(92, 122, 107, 0.15), transparent 58%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    /* Fond signature : l'atmosphère vivante est désormais portée par .bg-universe
+       (orbes morphing en apesanteur + particules) — voir la couche Antigravity. */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -1107,4 +1103,171 @@ footer { background: var(--dark); color: var(--on-dark); padding-block: clamp(48
     .js .hero-mock .alert { opacity: 1 !important; transform: none !important; }
     .js .vas-line { stroke-dashoffset: 0 !important; }
     .hero-aurora, .badge-dot { animation: none !important; }
+}
+
+/* =========================================================
+   ✦ ANTIGRAVITY LAYER — Univers flottant « cream edition »
+   Orbes morphing en apesanteur · particules · parallax souris ·
+   révélations cinématiques · rim-light au curseur · tilt 3D.
+   Inspiré de l'univers Google Antigravity, traduit dans la
+   palette cream/sage/coral. Placé en fin de fichier : surcharge
+   volontaire et assumée du design system.
+   ========================================================= */
+
+:root {
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.30, 1);
+    --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---- Couche d'atmosphère fixe : orbes + particules (derrière le contenu) ---- */
+.bg-universe {
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none; overflow: hidden;
+}
+.bg-particles {
+    position: fixed; inset: 0; z-index: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; opacity: 0.6;
+}
+
+/* Orbes de dégradé : dérive lente + respiration.
+   translate/scale (props indépendantes) sont animés en CSS, tandis que
+   `transform` reste libre pour le parallax souris/scroll posé par le JS. */
+.orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(64px); opacity: 0.55;
+    mix-blend-mode: multiply;
+    will-change: transform, translate, scale;
+    transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+}
+.orb-1 {
+    top: -12%; left: -8%; width: 48vw; height: 48vw; max-width: 660px; max-height: 660px;
+    background: radial-gradient(circle at 32% 32%, rgba(216,138,110,.60), rgba(216,138,110,0) 70%);
+    --pr: 0.024;
+    animation: orbFloatA 30s ease-in-out infinite alternate;
+}
+.orb-2 {
+    top: -8%; right: -10%; width: 52vw; height: 52vw; max-width: 720px; max-height: 720px;
+    background: radial-gradient(circle at 68% 30%, rgba(92,122,107,.52), rgba(92,122,107,0) 70%);
+    --pr: -0.030;
+    animation: orbFloatB 36s ease-in-out infinite alternate;
+}
+.orb-3 {
+    top: 44%; left: 34%; width: 42vw; height: 42vw; max-width: 580px; max-height: 580px;
+    background: radial-gradient(circle at 50% 50%, rgba(94,122,153,.34), rgba(94,122,153,0) 70%);
+    --pr: 0.018;
+    animation: orbFloatA 42s ease-in-out infinite alternate;
+}
+.orb-4 {
+    bottom: -14%; right: 4%; width: 40vw; height: 40vw; max-width: 540px; max-height: 540px;
+    background: radial-gradient(circle at 50% 50%, rgba(194,114,79,.30), rgba(194,114,79,0) 70%);
+    --pr: -0.020;
+    animation: orbFloatB 38s ease-in-out infinite alternate;
+}
+@keyframes orbFloatA {
+    0%   { translate: 0 0;    scale: 1;    }
+    50%  { translate: 4% -5%; scale: 1.10; }
+    100% { translate: -3% 4%; scale: 1.04; }
+}
+@keyframes orbFloatB {
+    0%   { translate: 0 0;    scale: 1.04; }
+    50%  { translate: -5% 4%; scale: 1;    }
+    100% { translate: 4% -4%; scale: 1.08; }
+}
+
+/* ---- Apesanteur : flottement doux (translate indépendant → compose avec :hover) ---- */
+.float       { animation: floatY 7s ease-in-out infinite; }
+.float--slow { animation: floatY 11s ease-in-out infinite; }
+@keyframes floatY { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+
+/* ---- Tilt 3D du visuel hero (rx/ry posés par le JS) ---- */
+.tilt-scene { perspective: 1100px; }
+.tilt {
+    transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transform-style: preserve-3d;
+    transition: transform 0.45s var(--ease-out-expo);
+    will-change: transform;
+}
+
+/* ---- Révélations cinématiques (surcharge le reveal de base) ---- */
+.js [data-reveal] {
+    opacity: 0; transform: translateY(26px); filter: blur(0);
+    transition: opacity 0.9s var(--ease-out-expo),
+                transform 0.9s var(--ease-out-expo),
+                filter 0.9s var(--ease-out-expo);
+    transition-delay: var(--d, 0s);
+}
+.js [data-reveal="blur"]  { transform: translateY(28px) scale(0.97); filter: blur(12px); }
+.js [data-reveal="scale"] { transform: scale(0.92); }
+.js [data-reveal="left"]  { transform: translateX(-34px); }
+.js [data-reveal="right"] { transform: translateX(34px); }
+.js [data-reveal].revealed { opacity: 1; transform: none; filter: none; }
+
+/* ---- Rim-light : bordure lumineuse qui suit le curseur (mx/my posés par le JS) ---- */
+.spot { position: relative; isolation: isolate; }
+.spot::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px;
+    background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%),
+                rgba(216,138,110,.65), rgba(92,122,107,.40) 42%, transparent 72%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: 0; transition: opacity 0.4s var(--ease);
+    pointer-events: none; z-index: 1;
+}
+.spot:hover::before { opacity: 1; }
+.section--dark .spot::before {
+    background: radial-gradient(220px circle at var(--mx,50%) var(--my,50%),
+                rgba(216,138,110,.85), rgba(92,122,107,.55) 42%, transparent 72%);
+}
+
+/* ---- Boutons : lueur d'apesanteur + magnétisme (translate posé par le JS) ---- */
+.btn-primary:hover { box-shadow: var(--sh-md), 0 10px 34px rgba(92,122,107,.30); }
+.btn-lg {
+    will-change: translate;
+    transition: transform 0.25s var(--ease), background 0.25s var(--ease),
+                box-shadow 0.25s var(--ease), border-color 0.25s var(--ease),
+                color 0.25s var(--ease), translate 0.3s var(--ease-spring);
+}
+
+/* ---- Sections sombres cinématiques : halos d'orbe dans les coins ---- */
+.section--dark { position: relative; overflow: hidden; }
+.section--dark::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+        radial-gradient(42% 60% at 10% 6%, rgba(216,138,110,.20), transparent 60%),
+        radial-gradient(46% 64% at 90% 98%, rgba(92,122,107,.22), transparent 62%);
+}
+.section--dark > .container { position: relative; z-index: 1; }
+
+/* ---- Hero : l'aurore locale cède la place aux orbes globaux ---- */
+.hero-aurora { display: none; }
+
+/* ---- Indice de scroll en apesanteur ---- */
+.scroll-cue {
+    position: absolute; left: 50%; bottom: 20px; translate: -50% 0;
+    display: inline-flex; flex-direction: column; align-items: center; gap: 6px;
+    font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-mute); z-index: 2; font-weight: 500;
+    animation: floatY 3.4s ease-in-out infinite;
+}
+.scroll-cue:hover { color: var(--ink); }
+.scroll-cue .lucide { width: 18px; height: 18px; }
+
+/* ---- Responsive : alléger l'atmosphère sur petits écrans ---- */
+@media (max-width: 700px) {
+    .orb { filter: blur(48px); opacity: 0.5; }
+    .orb-3 { display: none; }
+    .bg-particles { opacity: 0.45; }
+    .tilt { transform: none !important; }
+    .scroll-cue { display: none; }
+}
+
+/* ---- Réduction de mouvement : couche statique, zéro animation ---- */
+@media (prefers-reduced-motion: reduce) {
+    .bg-particles { display: none !important; }
+    .orb { animation: none !important; translate: none !important; scale: 1 !important; }
+    .float, .float--slow, .scroll-cue { animation: none !important; }
+    .tilt { transform: none !important; }
+    .js [data-reveal] { filter: none !important; }
 }
