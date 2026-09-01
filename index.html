@@ -1,1019 +1,701 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 
-    <!-- Active les animations d'apparition uniquement si JS est dispo (évite tout flash de contenu) -->
-    <script>document.documentElement.classList.add('js');</script>
+<title>Karefully — Suivi péri-opératoire pour cliniques de chirurgie esthétique</title>
+<meta name="description" content="Préparation pré-op guidée, bilan quotidien patient et priorisation selon vos critères. Gratuit pendant la phase pilote — demandez une démo.">
+<meta name="theme-color" content="#EAF1F0">
+<link rel="canonical" href="https://karefully-app.com">
 
-    <!-- SEO -->
-    <title>Karefully — Le suivi post-opératoire enfin structuré</title>
-    <meta name="description" content="Karefully centralise le suivi post-opératoire de vos patients : bilans quotidiens, détection précoce des complications et alertes en temps réel. La solution sécurisée pour chirurgiens et cliniques esthétiques.">
-    <meta name="theme-color" content="#FBF7F1">
-    <link rel="canonical" href="https://karefully.app">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Karefully">
+<meta property="og:title" content="Karefully — Suivi péri-opératoire pour cliniques de chirurgie esthétique">
+<meta property="og:description" content="Préparation pré-op guidée, bilan quotidien patient et priorisation selon vos critères. Gratuit pendant la phase pilote.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://karefully-app.com">
+<meta property="og:image" content="https://karefully-app.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Karefully — Suivi péri-opératoire pour cliniques de chirurgie esthétique">
+<meta name="twitter:description" content="Préparation pré-op guidée, bilan quotidien patient et priorisation selon vos critères. Gratuit pendant la phase pilote.">
+<meta name="twitter:image" content="https://karefully-app.com/assets/og-image.png">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Karefully — Le suivi post-opératoire enfin structuré">
-    <meta property="og:description" content="Bilans quotidiens, détection précoce des complications et alertes en temps réel. La solution de suivi post-op sécurisée pour chirurgiens et cliniques.">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="https://karefully.app">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="logo/brume/favicon-brume-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="logo/brume/favicon-brume-32.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo/png/favicon-mint-32px.png">
-    <link rel="apple-touch-icon" href="logo/png/favicon-mint-256px.png">
-
-    <!-- Fonts : Satoshi (Fontshare) -->
-    <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Karefully",
-      "applicationCategory": "HealthApplication",
-      "operatingSystem": "Web, iOS, Android",
-      "description": "Solution de suivi post-opératoire pour chirurgiens et cliniques esthétiques : bilans quotidiens, détection précoce des complications et alertes en temps réel.",
-      "offers": { "@type": "Offer", "category": "SaaS" }
-    }
-    </script>
+<link rel="preload" href="fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="#main" class="skip-link">Aller au contenu</a>
 
-    <!-- ===== NAVIGATION ===== -->
-    <header>
-        <nav id="navbar" aria-label="Navigation principale">
-            <a href="#" class="brand" aria-label="Karefully — accueil">
-                <span class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 100 100" width="32" height="32" fill="none">
-                        <path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-                <span class="brand-name">karefully</span>
-            </a>
+<a href="#main" class="skip-link">Aller au contenu</a>
 
-            <div class="nav-menu" id="navMenu">
-                <a href="#fonctionnement">Fonctionnement</a>
-                <a href="#fonctionnalites">Fonctionnalités</a>
-                <a href="#apercu">Aperçu</a>
-                <a href="#securite">Sécurité</a>
-                <a href="#tarifs">Offre</a>
-                <a href="#faq">FAQ</a>
-                <a href="https://karefully.app" class="btn btn-ghost nav-cta nav-login" rel="noopener"><i data-lucide="log-in" aria-hidden="true"></i>Se connecter</a>
-                <a href="#reserver" class="btn btn-primary nav-cta mobile-cta">Réserver un essai</a>
-            </div>
+<!-- Sprite d'icônes (Lucide, intégré : aucune requête externe) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91 0z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+<symbol id="i-timer" viewBox="0 0 24 24"><path d="M10 2h4"/><path d="m12 14 3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+<symbol id="i-phone-incoming" viewBox="0 0 24 24"><polyline points="16 2 16 8 22 8"/><path d="m22 2-6 6"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></symbol>
+<symbol id="i-file-warning" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.73 5.08a10.74 10.74 0 0 1 11.21 6.57 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-1.44 2.49"/><path d="M14.08 14.16a3 3 0 0 1-4.24-4.24"/><path d="M17.48 17.5a10.75 10.75 0 0 1-15.42-5.15 1 1 0 0 1 0-.7 10.75 10.75 0 0 1 4.45-5.14"/><path d="m2 2 20 20"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+<symbol id="i-stethoscope" viewBox="0 0 24 24"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></symbol>
+<symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+<symbol id="i-syringe" viewBox="0 0 24 24"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+<symbol id="i-languages" viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></symbol>
+<symbol id="i-life-buoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 24 24"><path d="M21.8 10A10 10 0 1 1 17 3.34"/><path d="m9 11 3 3L22 4"/></symbol>
+<symbol id="i-alert-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+<symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+</svg>
 
-            <a href="#reserver" class="btn btn-primary nav-cta desktop-cta">Réserver un essai</a>
-
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
-    </header>
-    <div class="nav-scrim" id="navScrim" aria-hidden="true"></div>
-
-    <main id="main">
-        <!-- ===== HERO ===== -->
-        <section id="hero">
-            <div class="hero-aurora" aria-hidden="true"></div>
-            <div class="container hero-grid">
-                <div class="hero-content" data-reveal>
-                    <span class="badge">
-                        <span class="badge-dot" aria-hidden="true"></span>
-                        Suivi post-opératoire intelligent
-                    </span>
-                    <h1>Le suivi post-op,<br><span class="text-accent">enfin structuré.</span></h1>
-                    <p class="subtitle">
-                        Karefully centralise le suivi de vos patients après chirurgie, automatise vos protocoles et vous alerte au bon moment — pour moins de chaos, plus de sécurité.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#reserver" class="btn btn-primary btn-lg">Réserver un essai</a>
-                        <a href="#fonctionnement" class="btn btn-ghost btn-lg">Voir comment ça marche</a>
-                    </div>
-                    <ul class="trust-badges" aria-label="Garanties de conformité">
-                        <li><i data-lucide="shield-check" aria-hidden="true"></i> Conforme RGPD</li>
-                        <li><i data-lucide="server" aria-hidden="true"></i> Hébergement UE (RGPD)</li>
-                        <li><i data-lucide="lock" aria-hidden="true"></i> Chiffrement en transit &amp; au repos</li>
-                    </ul>
-                </div>
-
-                <!-- Maquette « tableau de bord en direct » (données fictives) -->
-                <div class="hero-visual" data-reveal style="--d:.12s">
-                    <div class="hero-mock" id="heroMock" role="img" aria-label="Tableau de bord Karefully en direct — alertes patients (données fictives)">
-                        <div class="mock-head">
-                            <span class="mock-avatar" aria-hidden="true">DA</span>
-                            <div>
-                                <div class="mock-title">Dr Affolter — Tableau de bord</div>
-                                <div class="mock-sub">Clinique Churchill · 12 patients suivis</div>
-                            </div>
-                            <span class="mock-live"><span class="badge-dot" aria-hidden="true"></span>En direct</span>
-                        </div>
-                        <div class="mock-label">Alertes prioritaires</div>
-                        <ul class="alert-list">
-                            <li class="alert alert--critical">
-                                <span class="alert-dot" aria-hidden="true"></span>
-                                <span class="alert-text">Marie L. — Douleur signalée 7/10</span>
-                                <span class="alert-tag tag-critical">Critique</span>
-                            </li>
-                            <li class="alert alert--warn">
-                                <span class="alert-dot" aria-hidden="true"></span>
-                                <span class="alert-text">Sophie R. — Photo de cicatrice attendue</span>
-                                <span class="alert-tag tag-warn">Rappel</span>
-                            </li>
-                            <li class="alert alert--ok">
-                                <span class="alert-dot" aria-hidden="true"></span>
-                                <span class="alert-text">Julie M. — Bilan J+3 complété</span>
-                                <span class="alert-tag tag-ok">À jour</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== TRUST BAR ===== -->
-        <section class="trust-bar" aria-label="Conformité et sécurité">
-            <div class="container trust-bar-inner">
-                <p class="trust-bar-lead">Une exigence médicale, pas un canal informel</p>
-                <div class="trust-bar-items">
-                    <span><i data-lucide="shield-check" aria-hidden="true"></i> RGPD</span>
-                    <span><i data-lucide="server" aria-hidden="true"></i> Hébergement UE (RGPD)</span>
-                    <span><i data-lucide="lock" aria-hidden="true"></i> Chiffrement</span>
-                    <span><i data-lucide="file-check" aria-hidden="true"></i> Traçabilité médico-légale</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== PROBLÈME ===== -->
-        <section id="probleme" class="section section--dark">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge badge--light">Le constat</span>
-                    <h2>Ce que vivent la plupart<br>des chirurgiens plasticiens</h2>
-                    <p class="subtitle subtitle--center">Sans outil dédié, le suivi post-op repose sur des canaux non structurés — et les risques s'accumulent.</p>
-                </div>
-                <div class="grid-3">
-                    <article class="problem-card" data-reveal>
-                        <span class="icon-chip icon-chip--danger" aria-hidden="true"><i data-lucide="message-circle"></i></span>
-                        <h3>WhatsApp comme outil</h3>
-                        <p>Photos floues, messages perdus, disponibilité imposée 24h/24. Un canal informel pour un enjeu médical critique.</p>
-                    </article>
-                    <article class="problem-card" data-reveal style="--d:.08s">
-                        <span class="icon-chip icon-chip--danger" aria-hidden="true"><i data-lucide="clock"></i></span>
-                        <h3>Détection tardive</h3>
-                        <p>Sans protocole structuré, les signaux précoces passent entre les mailles. Une complication à J+3 devient une urgence à J+7.</p>
-                    </article>
-                    <article class="problem-card" data-reveal style="--d:.16s">
-                        <span class="icon-chip icon-chip--danger" aria-hidden="true"><i data-lucide="file-x"></i></span>
-                        <h3>Zéro traçabilité</h3>
-                        <p>En cas de litige, les échanges informels ne valent rien. L'absence de dossier structuré expose directement le praticien.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== COMPARATIF SANS / AVEC ===== -->
-        <section id="comparatif" class="section section--tint">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Avec ou sans Karefully</span>
-                    <h2>Le même post-op,<br>deux trajectoires</h2>
-                    <p class="subtitle subtitle--center">D'un côté l'informel et le risque qui s'accumule. De l'autre, un suivi structuré, tracé et serein.</p>
-                </div>
-
-                <div class="compare" data-reveal>
-                    <div class="compare-headrow">
-                        <span class="compare-dim-h" aria-hidden="true"></span>
-                        <span class="compare-col compare-col--no"><i data-lucide="circle-x" aria-hidden="true"></i> Sans Karefully</span>
-                        <span class="compare-col compare-col--yes"><i data-lucide="circle-check" aria-hidden="true"></i> Avec Karefully</span>
-                    </div>
-
-                    <div class="compare-row">
-                        <span class="compare-dim">Canal de suivi</span>
-                        <div class="compare-cell compare-cell--no">
-                            <span class="compare-clabel"><i data-lucide="circle-x" aria-hidden="true"></i> Sans Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--no" aria-hidden="true">✕</span> WhatsApp et SMS : photos floues, messages noyés, disponibilité imposée 24h/24.</span>
-                        </div>
-                        <div class="compare-cell compare-cell--yes">
-                            <span class="compare-clabel"><i data-lucide="circle-check" aria-hidden="true"></i> Avec Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--yes" aria-hidden="true">✓</span> Un bilan structuré et une messagerie dédiée, aux bons jalons du rétablissement.</span>
-                        </div>
-                    </div>
-                    <div class="compare-row">
-                        <span class="compare-dim">Détection des complications</span>
-                        <div class="compare-cell compare-cell--no">
-                            <span class="compare-clabel"><i data-lucide="circle-x" aria-hidden="true"></i> Sans Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--no" aria-hidden="true">✕</span> Les signaux précoces passent entre les mailles. Une gêne à J+3 devient une urgence à J+7.</span>
-                        </div>
-                        <div class="compare-cell compare-cell--yes">
-                            <span class="compare-clabel"><i data-lucide="circle-check" aria-hidden="true"></i> Avec Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--yes" aria-hidden="true">✓</span> Chaque réponse comparée à vos seuils. Toute anomalie remonte en alerte priorisée.</span>
-                        </div>
-                    </div>
-                    <div class="compare-row">
-                        <span class="compare-dim">Traçabilité médico-légale</span>
-                        <div class="compare-cell compare-cell--no">
-                            <span class="compare-clabel"><i data-lucide="circle-x" aria-hidden="true"></i> Sans Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--no" aria-hidden="true">✕</span> En cas de litige, des échanges informels qui ne constituent aucune preuve.</span>
-                        </div>
-                        <div class="compare-cell compare-cell--yes">
-                            <span class="compare-clabel"><i data-lucide="circle-check" aria-hidden="true"></i> Avec Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--yes" aria-hidden="true">✓</span> Échanges, décisions et photos consignés et horodatés — un dossier exportable en PDF pour le dossier médical.</span>
-                        </div>
-                    </div>
-                    <div class="compare-row">
-                        <span class="compare-dim">Charge mentale &amp; disponibilité</span>
-                        <div class="compare-cell compare-cell--no">
-                            <span class="compare-clabel"><i data-lucide="circle-x" aria-hidden="true"></i> Sans Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--no" aria-hidden="true">✕</span> Vous portez le suivi de tête, joignable en permanence, sans filtre ni priorisation.</span>
-                        </div>
-                        <div class="compare-cell compare-cell--yes">
-                            <span class="compare-clabel"><i data-lucide="circle-check" aria-hidden="true"></i> Avec Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--yes" aria-hidden="true">✓</span> Vous n'intervenez que là où c'est nécessaire — le reste se déroule sans vous solliciter.</span>
-                        </div>
-                    </div>
-                    <div class="compare-row">
-                        <span class="compare-dim">Expérience patient</span>
-                        <div class="compare-cell compare-cell--no">
-                            <span class="compare-clabel"><i data-lucide="circle-x" aria-hidden="true"></i> Sans Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--no" aria-hidden="true">✕</span> Patient livré à lui-même entre deux consultations, qui hésite à déranger.</span>
-                        </div>
-                        <div class="compare-cell compare-cell--yes">
-                            <span class="compare-clabel"><i data-lucide="circle-check" aria-hidden="true"></i> Avec Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--yes" aria-hidden="true">✓</span> Le patient est guidé chaque jour et se sent suivi, du bloc jusqu'au rétablissement.</span>
-                        </div>
-                    </div>
-                    <div class="compare-row">
-                        <span class="compare-dim">Sécurité des données</span>
-                        <div class="compare-cell compare-cell--no">
-                            <span class="compare-clabel"><i data-lucide="circle-x" aria-hidden="true"></i> Sans Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--no" aria-hidden="true">✕</span> Données de santé dispersées sur des messageries grand public, hors de tout cadre médical.</span>
-                        </div>
-                        <div class="compare-cell compare-cell--yes">
-                            <span class="compare-clabel"><i data-lucide="circle-check" aria-hidden="true"></i> Avec Karefully</span>
-                            <span class="compare-cell-inner"><span class="ci ci--yes" aria-hidden="true">✓</span> Données hébergées dans l'UE, conformes RGPD, chiffrées en transit et au repos.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== COMMENT ÇA MARCHE ===== -->
-        <section id="fonctionnement" class="section">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Fonctionnement</span>
-                    <h2>Un suivi automatisé,<br>de la sortie de bloc au rétablissement</h2>
-                    <p class="subtitle subtitle--center">Karefully guide le patient et alerte votre équipe — vous n'intervenez que là où c'est nécessaire.</p>
-                </div>
-                <ol class="steps">
-                    <li class="step" data-reveal>
-                        <span class="step-num">1</span>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="clipboard-check"></i></span>
-                        <h3>Le patient fait son bilan</h3>
-                        <p>Chaque jour, le patient renseigne sa douleur, ses symptômes et envoie ses photos depuis son téléphone.</p>
-                    </li>
-                    <li class="step" data-reveal style="--d:.08s">
-                        <span class="step-num">2</span>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="activity"></i></span>
-                        <h3>Le protocole analyse</h3>
-                        <p>Les réponses sont comparées aux seuils de votre protocole, à chaque jalon clé du rétablissement.</p>
-                    </li>
-                    <li class="step" data-reveal style="--d:.16s">
-                        <span class="step-num">3</span>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="bell"></i></span>
-                        <h3>Votre équipe est alertée</h3>
-                        <p>Toute anomalie déclenche une alerte priorisée sur le tableau de bord — sans bruit inutile.</p>
-                    </li>
-                    <li class="step" data-reveal style="--d:.24s">
-                        <span class="step-num">4</span>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="shield-check"></i></span>
-                        <h3>Vous intervenez, tracé</h3>
-                        <p>Échanges, décisions et photos sont consignés dans un dossier structuré et horodaté.</p>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ===== FONCTIONNALITÉS ===== -->
-        <section id="fonctionnalites" class="section section--tint">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Fonctionnalités</span>
-                    <h2>Tout le suivi post-op,<br>au même endroit</h2>
-                    <p class="subtitle subtitle--center">Une plateforme pensée pour le quotidien des chirurgiens et de leurs équipes.</p>
-                </div>
-                <div class="features">
-                    <article class="feature-card" data-reveal>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="clipboard-check"></i></span>
-                        <h3>Bilan quotidien</h3>
-                        <p>Douleur (échelle 0-10), symptômes et photos multiples collectés automatiquement aux bons jalons.</p>
-                    </article>
-                    <article class="feature-card" data-reveal style="--d:.06s">
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="camera"></i></span>
-                        <h3>Photos &amp; cicatrisation</h3>
-                        <p>Galerie photo horodatée par patient pour suivre l'évolution des cicatrices dans le temps.</p>
-                    </article>
-                    <article class="feature-card" data-reveal style="--d:.12s">
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="bell-ring"></i></span>
-                        <h3>Alertes intelligentes</h3>
-                        <p>Détection précoce des complications et alertes priorisées dès qu'un seuil est dépassé.</p>
-                    </article>
-                    <article class="feature-card" data-reveal>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="message-square"></i></span>
-                        <h3>Messagerie tracée</h3>
-                        <p>Un canal sécurisé avec accusés de lecture, qui remplace WhatsApp et reste consigné.</p>
-                    </article>
-                    <article class="feature-card" data-reveal style="--d:.06s">
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="list-checks"></i></span>
-                        <h3>Protocoles personnalisables</h3>
-                        <p>Adaptez les jalons et les questions à chaque type d'intervention que vous pratiquez.</p>
-                    </article>
-                    <article class="feature-card" data-reveal style="--d:.12s">
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="building-2"></i></span>
-                        <h3>Multi-cliniques &amp; équipe</h3>
-                        <p>Gérez plusieurs structures, partagez les dossiers avec votre équipe et invitez des collaborateurs.</p>
-                    </article>
-                    <article class="feature-card" data-reveal>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="file-down"></i></span>
-                        <h3>Export PDF du dossier</h3>
-                        <p>Téléchargez l'intégralité du suivi — bilans, photos et échanges — en un PDF structuré, prêt à verser au dossier médical du patient.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== APERÇU PRODUIT ===== -->
-        <!-- NOTE : toutes les données affichées dans ces maquettes sont fictives (RGPD). -->
-        <section id="apercu" class="section">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Aperçu du produit</span>
-                    <h2>Voyez Karefully<br>en action</h2>
-                    <p class="subtitle subtitle--center">Le quotidien de votre équipe et celui de vos patients, réunis dans une interface claire et sécurisée.</p>
-                </div>
-
-                <!-- Row 1 — Dashboard équipe -->
-                <div class="showcase-row" data-reveal>
-                    <div class="showcase-text">
-                        <span class="showcase-eyebrow">Côté équipe médicale</span>
-                        <h3>Un tableau de bord qui trie vos patients pour vous</h3>
-                        <p>D'un coup d'œil, vous voyez qui a besoin d'attention et qui se rétablit normalement. Les cas à risque remontent en haut, le reste se gère seul.</p>
-                        <ul class="check-list">
-                            <li>Patients à surveiller mis en avant automatiquement</li>
-                            <li>Statut, douleur et tendance visibles sur chaque carte</li>
-                            <li>Filtres par état clinique et type d'intervention</li>
-                        </ul>
-                    </div>
-                    <div class="showcase-visual">
-                        <div class="browser" role="img" aria-label="Tableau de bord Karefully — vue d'ensemble des patients (données fictives)">
-                            <div class="browser-bar" aria-hidden="true">
-                                <span class="browser-dots"><i></i><i></i><i></i></span>
-                                <span class="browser-url"><i data-lucide="lock"></i>karefully.app/tableau-de-bord</span>
-                            </div>
-                            <div class="browser-body app-ui">
-                                <div class="app-topbar">
-                                    <div>
-                                        <div class="app-eyebrow">Mardi 17 juin</div>
-                                        <div class="app-title">Bonjour, Dr Affolter</div>
-                                    </div>
-                                    <span class="app-toggle" aria-hidden="true"><span class="is-active">Cartes</span><span>Liste</span></span>
-                                </div>
-                                <div class="app-filters" aria-hidden="true">
-                                    <span class="fpill is-active">Tous · 12</span>
-                                    <span class="fpill fpill--warn">Attention · 2</span>
-                                    <span class="fpill">Surveiller · 1</span>
-                                    <span class="fpill">Stables · 9</span>
-                                </div>
-
-                                <div class="app-section-label"><span class="dot dot--alert"></span> À regarder en priorité</div>
-                                <div class="pcard-row">
-                                    <article class="pcard pcard--alert">
-                                        <header class="pcard-head"><span class="pavatar">ML</span><span class="pstatus pstatus--alert">Attention</span></header>
-                                        <div class="pcard-name">Marie L.</div>
-                                        <div class="pcard-meta">Rhinoplastie · J+3</div>
-                                        <div class="pcard-foot"><span class="pvas pvas--alert">7<small>/10</small></span><span class="ptrend ptrend--up">▲ +2 depuis hier</span></div>
-                                    </article>
-                                    <article class="pcard pcard--warn">
-                                        <header class="pcard-head"><span class="pavatar">KB</span><span class="pstatus pstatus--warn">Surveiller</span></header>
-                                        <div class="pcard-name">Karim B.</div>
-                                        <div class="pcard-meta">Abdominoplastie · J+2</div>
-                                        <div class="pcard-foot"><span class="pvas pvas--warn">5<small>/10</small></span><span class="ptrend">Photo attendue</span></div>
-                                    </article>
-                                </div>
-
-                                <div class="app-section-label"><span class="dot dot--ok"></span> Vont bien — 9 patients</div>
-                                <div class="pcard-row pcard-row--mini">
-                                    <article class="pcard pcard--mini"><header class="pcard-head"><span class="pavatar">JM</span><span class="pstatus pstatus--ok">Stable</span></header><div class="pcard-name">Julie M.</div><div class="pcard-meta">Augmentation · J+8</div></article>
-                                    <article class="pcard pcard--mini"><header class="pcard-head"><span class="pavatar">LD</span><span class="pstatus pstatus--ok">Stable</span></header><div class="pcard-name">Léa D.</div><div class="pcard-meta">Blépharoplastie · J+5</div></article>
-                                    <article class="pcard pcard--mini"><header class="pcard-head"><span class="pavatar">HP</span><span class="pstatus pstatus--ok">Stable</span></header><div class="pcard-name">Hugo P.</div><div class="pcard-meta">Liposuccion · J+12</div></article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 2 — Fiche patient -->
-                <div class="showcase-row showcase-row--rev" data-reveal>
-                    <div class="showcase-text">
-                        <span class="showcase-eyebrow">Détection précoce</span>
-                        <h3>La fiche patient qui révèle les complications avant qu'elles dégénèrent</h3>
-                        <p>Courbe de douleur, photos horodatées et symptômes réunis sur une seule page. Vous repérez une dérive en quelques secondes.</p>
-                        <ul class="check-list">
-                            <li>Courbe de douleur (EVA) sur 7 jours</li>
-                            <li>Galerie photo horodatée par jalon</li>
-                            <li>Symptômes et seuils d'alerte personnalisés</li>
-                        </ul>
-                    </div>
-                    <div class="showcase-visual">
-                        <div class="browser" role="img" aria-label="Fiche patient Karefully avec courbe de douleur et photos (données fictives)">
-                            <div class="browser-bar" aria-hidden="true">
-                                <span class="browser-dots"><i></i><i></i><i></i></span>
-                                <span class="browser-url"><i data-lucide="lock"></i>karefully.app/patients/marie-l</span>
-                            </div>
-                            <div class="browser-body app-ui">
-                                <div class="file-head">
-                                    <span class="pavatar pavatar--lg">ML</span>
-                                    <div>
-                                        <div class="app-title">Marie Lefèvre</div>
-                                        <div class="app-eyebrow">34 ans · Rhinoplastie · J+3</div>
-                                    </div>
-                                    <span class="pstatus pstatus--alert" aria-hidden="true">● Attention</span>
-                                </div>
-
-                                <div class="file-card">
-                                    <div class="file-card-head"><span class="app-section-label" style="margin:0">Douleur — 7 derniers jours</span><span class="pvas pvas--alert">7<small>/10</small></span></div>
-                                    <svg class="vas-chart" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
-                                        <defs>
-                                            <linearGradient id="vasFill" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stop-color="#B8543F" stop-opacity="0.20"/>
-                                                <stop offset="100%" stop-color="#B8543F" stop-opacity="0"/>
-                                            </linearGradient>
-                                        </defs>
-                                        <path d="M10,100 L60,90 L110,80 L160,70 L210,60 L260,50 L310,40 L310,118 L10,118 Z" fill="url(#vasFill)"/>
-                                        <path class="vas-line" d="M10,100 L60,90 L110,80 L160,70 L210,60 L260,50 L310,40"/>
-                                        <circle cx="310" cy="40" r="5" fill="#B8543F"/>
-                                        <circle cx="310" cy="40" r="9" fill="#B8543F" fill-opacity="0.18"/>
-                                    </svg>
-                                    <div class="vas-axis" aria-hidden="true"><span>J+0</span><span>J+1</span><span>J+2</span><span>J+3</span></div>
-                                </div>
-
-                                <div class="app-section-label">Suivi photo</div>
-                                <div class="photo-strip" aria-hidden="true">
-                                    <span class="photo-tile"><i data-lucide="camera"></i><em>J+1</em></span>
-                                    <span class="photo-tile"><i data-lucide="camera"></i><em>J+2</em></span>
-                                    <span class="photo-tile photo-tile--new"><i data-lucide="camera"></i><em>J+3</em></span>
-                                    <span class="photo-tile photo-tile--cmp">↔<em>Comparer</em></span>
-                                </div>
-                                <div class="symptom-row" aria-hidden="true">
-                                    <span class="symptom"><b class="sym--ok">✓</b> Pas de fièvre</span>
-                                    <span class="symptom"><b class="sym--warn">!</b> Œdème modéré</span>
-                                    <span class="symptom"><b class="sym--ok">✓</b> Sommeil correct</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 3 — Portail patient mobile -->
-                <div class="showcase-row" data-reveal>
-                    <div class="showcase-text">
-                        <span class="showcase-eyebrow">Côté patient</span>
-                        <h3>Un bilan quotidien bouclé en moins d'une minute</h3>
-                        <p>Le patient renseigne son ressenti, sa douleur et ses photos depuis son téléphone — guidé, rassuré, sans jamais vous solliciter pour rien.</p>
-                        <ul class="check-list">
-                            <li>Humeur, douleur et photos en quelques gestes</li>
-                            <li>Rappels automatiques, aucun rendez-vous oublié</li>
-                            <li>Bouton d'alerte en cas d'urgence ressentie</li>
-                        </ul>
-                    </div>
-                    <div class="showcase-visual showcase-visual--phones">
-                        <div class="device-phone device-phone--front" role="img" aria-label="Portail patient Karefully — bilan quotidien (données fictives)">
-                            <div class="dp-notch" aria-hidden="true"></div>
-                            <div class="dp-screen">
-                                <div class="dp-top">Mon bilan du jour · J+3</div>
-                                <div class="dp-q">Comment vous sentez-vous ?</div>
-                                <div class="dp-moods" aria-hidden="true">
-                                    <span class="dp-mood is-active">☀️</span>
-                                    <span class="dp-mood">⛅</span>
-                                    <span class="dp-mood">🌧️</span>
-                                    <span class="dp-mood">⛈️</span>
-                                </div>
-                                <div class="dp-q">Votre douleur aujourd'hui</div>
-                                <div class="dp-slider" aria-hidden="true">
-                                    <span class="dp-track"><span class="dp-fill"></span><span class="dp-thumb"></span></span>
-                                    <span class="dp-val">3<small>/10</small></span>
-                                </div>
-                                <div class="dp-photo" aria-hidden="true"><i data-lucide="camera"></i> Ajouter mes photos</div>
-                                <div class="dp-reply" aria-hidden="true">« Merci Marie. C'est noté. Continuons doucement. »</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 4 — Centre de veille -->
-                <div class="showcase-row showcase-row--rev" data-reveal>
-                    <div class="showcase-text">
-                        <span class="showcase-eyebrow">Veille clinique</span>
-                        <h3>Une veille en temps réel, sans le bruit inutile</h3>
-                        <p>Chaque signal patient remonte, priorisé et horodaté. Vous traitez, vous tracez, et l'historique reste consigné.</p>
-                        <ul class="check-list">
-                            <li>Alertes priorisées : critique, à surveiller, routine</li>
-                            <li>Accusé de traitement sur chaque alerte</li>
-                            <li>Notifications e-mail / SMS configurables</li>
-                        </ul>
-                    </div>
-                    <div class="showcase-visual">
-                        <div class="browser" role="img" aria-label="Centre de veille Karefully — alertes en temps réel (données fictives)">
-                            <div class="browser-bar" aria-hidden="true">
-                                <span class="browser-dots"><i></i><i></i><i></i></span>
-                                <span class="browser-url"><i data-lucide="lock"></i>karefully.app/veille</span>
-                            </div>
-                            <div class="browser-body app-ui">
-                                <div class="app-section-label">Aujourd'hui</div>
-                                <div class="veille-feed">
-                                    <div class="vitem vitem--alert">
-                                        <span class="vdot" aria-hidden="true"></span>
-                                        <div class="vbody">
-                                            <div class="vtitle">Marie L. · Rhinoplastie</div>
-                                            <div class="vdesc">Douleur 7/10 signalée — réponse attendue</div>
-                                            <div class="vactions" aria-hidden="true"><span>Ouvrir le dossier</span><span>Appeler</span><span class="vact-done">✓ Marquer traité</span></div>
-                                        </div>
-                                        <span class="vtime">8 min</span>
-                                    </div>
-                                    <div class="vitem vitem--warn">
-                                        <span class="vdot" aria-hidden="true"></span>
-                                        <div class="vbody">
-                                            <div class="vtitle">Sophie R. · Augmentation</div>
-                                            <div class="vdesc">Nouvelle photo de cicatrice ajoutée</div>
-                                        </div>
-                                        <span class="vtime">1 h</span>
-                                    </div>
-                                    <div class="vitem vitem--ok">
-                                        <span class="vdot" aria-hidden="true"></span>
-                                        <div class="vbody">
-                                            <div class="vtitle">Julie M. · Abdominoplastie</div>
-                                            <div class="vdesc">Bilan J+8 complété — tout est stable</div>
-                                        </div>
-                                        <span class="vtime">2 h</span>
-                                    </div>
-                                </div>
-                                <div class="app-section-label">Hier</div>
-                                <div class="veille-feed">
-                                    <div class="vitem vitem--mut">
-                                        <span class="vdot" aria-hidden="true"></span>
-                                        <div class="vbody">
-                                            <div class="vtitle">Karim B. · Abdominoplastie</div>
-                                            <div class="vdesc">Check-in manqué — relance automatique envoyée</div>
-                                        </div>
-                                        <span class="vtime">18 h</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Galerie compacte — messagerie, protocoles, agenda -->
-                <div class="mini-gallery" data-reveal aria-hidden="true">
-                    <figure class="mini-screen">
-                        <div class="mini-head" aria-hidden="true"><span class="browser-dots"><i></i><i></i><i></i></span><span class="mini-tag">Messagerie tracée</span></div>
-                        <div class="mini-body">
-                            <div class="chat-line chat--in"><span class="bubble bubble--patient">Léger saignement ce matin, c'est normal ?</span></div>
-                            <div class="chat-line chat--out"><span class="bubble bubble--staff">Oui, c'est attendu à J+3. Surveillez la fièvre. <em class="rr">✓✓</em></span></div>
-                            <div class="chat-line chat--in"><span class="bubble bubble--patient">Merci, ça me rassure 🙏</span></div>
-                        </div>
-                    </figure>
-                    <figure class="mini-screen">
-                        <div class="mini-head" aria-hidden="true"><span class="browser-dots"><i></i><i></i><i></i></span><span class="mini-tag">Protocoles</span></div>
-                        <div class="mini-body">
-                            <div class="mini-subtitle">Rhinoplastie · 8 jalons</div>
-                            <div class="proto-item"><span class="proto-day">J+1</span> Retrait du méchage <b class="proto-check">✓</b></div>
-                            <div class="proto-item"><span class="proto-day">J+3</span> Bilan douleur + photos</div>
-                            <div class="proto-item"><span class="proto-day">J+7</span> Retrait de l'attelle</div>
-                            <div class="proto-item proto-item--add">+ Ajouter un jalon</div>
-                        </div>
-                    </figure>
-                    <figure class="mini-screen">
-                        <div class="mini-head" aria-hidden="true"><span class="browser-dots"><i></i><i></i><i></i></span><span class="mini-tag">Agenda</span></div>
-                        <div class="mini-body">
-                            <div class="mini-subtitle">Aujourd'hui · 3 rendez-vous</div>
-                            <div class="appt"><span class="appt-time">09:30</span><div class="appt-info"><b>Léa D.</b><span>Contrôle J+5 · Blépharoplastie</span></div></div>
-                            <div class="appt"><span class="appt-time">11:00</span><div class="appt-info"><b>Hugo P.</b><span>Retrait fils · Liposuccion</span></div></div>
-                            <div class="appt"><span class="appt-time">14:15</span><div class="appt-info"><b>Marie L.</b><span>Consultation · Rhinoplastie</span></div></div>
-                        </div>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== DOUBLE PORTAIL ===== -->
-        <section id="portails" class="section section--tint">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Deux portails, une continuité</span>
-                    <h2>Pensé pour le patient<br>et pour l'équipe médicale</h2>
-                    <p class="subtitle subtitle--center">Chaque utilisateur dispose d'une interface dédiée, simple et adaptée à son rôle.</p>
-                </div>
-
-                <div class="portal" data-reveal>
-                    <div class="tabs" role="tablist" aria-label="Choisir un portail">
-                        <button class="tab is-active" role="tab" id="tab-patient" aria-selected="true" aria-controls="panel-patient">
-                            <i data-lucide="smartphone" aria-hidden="true"></i>
-                            Côté patient
-                        </button>
-                        <button class="tab" role="tab" id="tab-staff" aria-selected="false" aria-controls="panel-staff" tabindex="-1">
-                            <i data-lucide="stethoscope" aria-hidden="true"></i>
-                            Côté équipe
-                        </button>
-                    </div>
-
-                    <div class="portal-panel is-active" id="panel-patient" role="tabpanel" aria-labelledby="tab-patient">
-                        <div class="portal-text">
-                            <h3>Un parcours rassurant, étape par étape</h3>
-                            <ul class="check-list">
-                                <li>Bilan quotidien guidé en quelques secondes</li>
-                                <li>Rappels automatiques, aucun rendez-vous oublié</li>
-                                <li>Consignes de récupération personnalisées par phase</li>
-                                <li>Bouton d'alerte en cas d'urgence ressentie</li>
-                            </ul>
-                            <a href="#reserver" class="btn btn-primary">Réserver un essai</a>
-                        </div>
-                        <div class="portal-visual">
-                            <div class="phone">
-                                <div class="phone-top">Mon rétablissement · J+3</div>
-                                <div class="phone-cta">Faire mon bilan du jour</div>
-                                <div class="phone-row"><span>Douleur</span><span class="pill">3 / 10</span></div>
-                                <div class="phone-row"><span>Photos</span><span class="pill pill--ok">Envoyées</span></div>
-                                <div class="phone-row"><span>Messages</span><span class="pill">1 nouveau</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="portal-panel" id="panel-staff" role="tabpanel" aria-labelledby="tab-staff" hidden>
-                        <div class="portal-text">
-                            <h3>Une vue claire sur tous vos patients</h3>
-                            <ul class="check-list">
-                                <li>Tableau de bord des alertes priorisées</li>
-                                <li>Fiche patient complète : bilans, photos, historique</li>
-                                <li>Messagerie tracée avec accusés de lecture</li>
-                                <li>Gestion d'équipe et de plusieurs cliniques</li>
-                            </ul>
-                            <a href="#reserver" class="btn btn-primary">Réserver un essai</a>
-                        </div>
-                        <div class="portal-visual">
-                            <div class="mockup-dash mockup-dash--mini">
-                                <div class="dash-label">File d'attente · veille</div>
-                                <ul class="alert-list">
-                                    <li class="alert alert--critical"><span class="alert-dot" aria-hidden="true"></span><span class="alert-text">Marie L. — VAS 7/10</span><span class="alert-tag tag-critical">Critique</span></li>
-                                    <li class="alert alert--warn"><span class="alert-dot" aria-hidden="true"></span><span class="alert-text">Sophie R. — Photo attendue</span><span class="alert-tag tag-warn">Rappel</span></li>
-                                    <li class="alert alert--ok"><span class="alert-dot" aria-hidden="true"></span><span class="alert-text">Julie M. — Bilan complété</span><span class="alert-tag tag-ok">À jour</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== BÉNÉFICES ===== -->
-        <section id="benefices" class="section">
-            <div class="container">
-                <div class="grid-2 bene-head">
-                    <div data-reveal>
-                        <span class="badge">Bénéfices</span>
-                        <h2>Plus de sécurité,<br><span class="text-accent">moins de charge mentale.</span></h2>
-                    </div>
-                    <p class="subtitle" data-reveal style="--d:.08s">Karefully s'intègre à votre flux existant. Vos patients sont guidés automatiquement, votre équipe est alertée au bon moment, et chaque échange est consigné.</p>
-                </div>
-                <div class="grid-2 benefits">
-                    <article class="benefit-card" data-reveal>
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="clock"></i></span>
-                        <div>
-                            <h3>Du temps médical gagné</h3>
-                            <p>Fini les rappels manuels et les messages à toute heure : les tâches répétitives sont automatisées.</p>
-                        </div>
-                    </article>
-                    <article class="benefit-card" data-reveal style="--d:.06s">
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="smile"></i></span>
-                        <div>
-                            <h3>Sérénité au quotidien</h3>
-                            <p>Vous n'intervenez que sur les cas qui le méritent vraiment. Le reste se déroule en autonomie.</p>
-                        </div>
-                    </article>
-                    <article class="benefit-card" data-reveal style="--d:.12s">
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="scale"></i></span>
-                        <div>
-                            <h3>Sécurité médico-légale</h3>
-                            <p>Un dossier structuré et horodaté qui vous protège en cas de litige ou de réclamation.</p>
-                        </div>
-                    </article>
-                    <article class="benefit-card" data-reveal style="--d:.18s">
-                        <span class="icon-chip" aria-hidden="true"><i data-lucide="user-check"></i></span>
-                        <div>
-                            <h3>Une meilleure expérience patient</h3>
-                            <p>Des patients rassurés, guidés et écoutés — un suivi premium qui valorise votre pratique.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== SÉCURITÉ ===== -->
-        <section id="securite" class="section section--dark">
-            <div class="container">
-                <div class="grid-2 security-grid">
-                    <div class="security-intro" data-reveal>
-                        <span class="badge badge--light">Sécurité &amp; conformité</span>
-                        <h2>Les données de santé<br>méritent le plus haut niveau.</h2>
-                        <p class="subtitle">La sécurité n'est pas une option dans le médical. Karefully est conçu autour de la protection des données de vos patients.</p>
-                        <a href="#reserver" class="btn btn-primary">Parler à notre équipe</a>
-                    </div>
-                    <ul class="security-list" data-reveal style="--d:.08s">
-                        <li>
-                            <span class="icon-chip icon-chip--light" aria-hidden="true"><i data-lucide="shield-check"></i></span>
-                            <div><h3>Conforme RGPD</h3><p>Consentements horodatés, minimisation des données et droit à l'effacement.</p></div>
-                        </li>
-                        <li>
-                            <span class="icon-chip icon-chip--light" aria-hidden="true"><i data-lucide="server"></i></span>
-                            <div><h3>Hébergement des données de santé</h3><p>Migration vers un hébergement certifié HDS en cours ; infrastructure pensée dès aujourd'hui pour les exigences des données de santé.</p></div>
-                        </li>
-                        <li>
-                            <span class="icon-chip icon-chip--light" aria-hidden="true"><i data-lucide="lock"></i></span>
-                            <div><h3>Chiffrement</h3><p>Données chiffrées en transit et au repos, avec contrôle d'accès strict par rôle.</p></div>
-                        </li>
-                        <li>
-                            <span class="icon-chip icon-chip--light" aria-hidden="true"><i data-lucide="file-check"></i></span>
-                            <div><h3>Traçabilité complète</h3><p>Chaque échange et décision est consigné et horodaté — un véritable dossier de preuve.</p></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== TARIFS / OFFRE D'ESSAI ===== -->
-        <section id="tarifs" class="section section--tint">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Offre de lancement</span>
-                    <h2>Essai gratuit,<br>sous validation</h2>
-                    <p class="subtitle subtitle--center">Karefully est réservé aux praticiens. Après un court échange de qualification (un créneau de 30 min), nous validons votre profil et activons votre essai configuré sur vos types d'interventions.</p>
-                </div>
-                <div class="trial-wrap" data-reveal>
-                    <article class="price-card price-card--featured trial-card">
-                        <span class="price-tag">Sans carte bancaire</span>
-                        <h3>Essai gratuit</h3>
-                        <p class="price-desc">Accès accordé après validation de votre profil de praticien.</p>
-                        <div class="price"><span class="price-amount">Gratuit</span><span class="price-cycle"> — sous validation</span></div>
-                        <ul class="check-list">
-                            <li>Essai prêt à l'emploi, configuré avec le Dr Affolter sur vos interventions</li>
-                            <li>Bilans, photos et alertes priorisées illimités sur tout l'essai</li>
-                            <li>Messagerie sécurisée pour remplacer les échanges WhatsApp</li>
-                            <li>Données hébergées dans l'UE (EU-West, Irlande), conforme RGPD — chiffrées en transit et au repos</li>
-                            <li>Accompagnement de votre équipe lors des premiers patients</li>
-                        </ul>
-                        <a href="#reserver" class="btn btn-primary btn-lg btn-block">Réserver un essai</a>
-                        <p class="trial-fineprint">Sans engagement, sans carte bancaire. Vous repartez de l'échange avec un essai prêt à l'emploi.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FAQ ===== -->
-        <section id="faq" class="section">
-            <div class="container container--narrow">
-                <div class="section-head" data-reveal>
-                    <span class="badge">FAQ</span>
-                    <h2>Questions fréquentes</h2>
-                    <p class="subtitle subtitle--center">Le produit, vos options et la conformité de vos données — pour la Belgique et l'Europe.</p>
-                </div>
-                <p class="faq-group-label" data-reveal>Le produit au quotidien</p>
-                <div class="faq">
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Comment le système détecte-t-il une complication ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Karefully utilise des protocoles dynamiques qui capturent la douleur, les photos et les symptômes aux jalons critiques. Si un patient signale une anomalie ou dépasse un seuil (par ex. douleur 7/10), une alerte priorisée apparaît immédiatement sur votre tableau de bord.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Puis-je centraliser tout mon suivi et arrêter WhatsApp ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>C'est l'objectif. Karefully remplace les échanges informels et risqués par un canal sécurisé, structuré et traçable. Vous gagnez en sérénité et disposez d'un dossier complet en cas de besoin.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Puis-je adapter Karefully à mes propres types d'interventions ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Oui. Vous créez un protocole par type d'intervention (rhinoplastie, augmentation mammaire, abdominoplastie, etc.) et définissez librement chaque jalon en jours post-opératoires (J+1, J+7…) : consignes au patient, tâches à cocher, demandes de photo et relevé de douleur. Vous partez d'un modèle existant que vous dupliquez et personnalisez, ou créez le vôtre de zéro. Vos protocoles sont modifiables par toute votre équipe, et une modification ne s'applique qu'aux futurs patients : les dossiers en cours restent inchangés.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Comment Karefully s'adapte à ma structure : cabinet solo, clinique ou plusieurs sites ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Karefully repose sur un double portail : un côté patient (bilan quotidien, photos, symptômes, messages) et un côté équipe (tableau de bord, fiches, veille des alertes). Côté équipe, vous gérez des rôles distincts (chirurgien, infirmier·e, administrateur) et invitez vos collaborateurs en quelques clics. Un même praticien peut appartenir à plusieurs cliniques et basculer entre elles grâce au sélecteur de clinique présent sur toutes les pages. L'outil convient donc aussi bien à un chirurgien solo qu'à une clinique ou un réseau multi-sites.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Puis-je mettre Karefully aux couleurs de ma clinique ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Oui. Depuis les réglages, vous chargez le logo de votre clinique et choisissez votre couleur principale : l'interface s'adapte alors à votre identité visuelle, pour vous comme pour vos patients. La messagerie entre l'équipe et le patient remplace les échanges WhatsApp par un canal sécurisé et tracé : chaque message porte un accusé d'envoi puis de lecture (✓ envoyé, ✓✓ lu par le patient), ce qui vous laisse un suivi clair et horodaté.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Puis-je verser le suivi dans le dossier médical du patient ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Oui. À tout moment, vous téléchargez l'intégralité du suivi d'un patient — bilans quotidiens, douleur, photos horodatées et échanges — sous la forme d'un document PDF structuré, prêt à être archivé dans son dossier médical ou produit en cas de besoin médico-légal.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Combien de temps pour démarrer ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>La mise en route est rapide. Après l'échange de validation, nous configurons vos protocoles selon vos types d'interventions et accompagnons votre équipe lors des premiers patients.</p></div>
-                    </div>
-                </div>
-
-                <p class="faq-group-label" data-reveal>Vos données &amp; la conformité — Belgique / Europe</p>
-                <div class="faq">
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Où sont hébergées les données de mes patients, et restent-elles dans l'Union européenne ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Oui. Les données sont actuellement hébergées sur une infrastructure située dans l'Union européenne (Supabase, région EU-West, en Irlande). Vos données et celles de vos patients ne quittent pas l'UE, ce qui garantit la résidence européenne des données et l'application pleine et entière du cadre réglementaire européen.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Karefully est-il conforme au RGPD et adapté au contexte belge ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Karefully est conçu dès le départ dans le respect du RGPD, qui s'applique pleinement en Belgique et encadre strictement les données de santé en tant que catégorie sensible. L'accès est contrôlé par rôle et la traçabilité est assurée. En Belgique, l'échange des données de soins s'appuie sur la plateforme eHealth, tandis que la Health Data Agency encadre l'utilisation secondaire des données de santé (recherche, innovation) ; nous suivons ce cadre national de près pour rester alignés.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Qu'en est-il du cadre européen EHDS (Espace européen des données de santé) ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Le règlement EHDS (UE 2025/327) est entré en vigueur en mars 2025, avec une application progressive prévue à partir de 2027. C'est un cadre européen émergent : nous ne revendiquons donc aucune certification EHDS, qui n'existe pas encore à ce stade. Notre approche, fondée sur l'hébergement dans l'UE et la conformité RGPD, vise à nous préparer et à rester alignés avec ce cadre à mesure qu'il se déploie.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Vos données de santé bénéficient-elles d'un hébergement certifié HDS ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>L'hébergement est actuellement sur une infrastructure conforme au RGPD et localisée dans l'UE, mais pas encore certifiée HDS (Hébergeur de Données de Santé — le référentiel français de référence pour l'hébergement de données de santé, reconnu comme un gage de sécurité au-delà de la France ; il n'a pas d'équivalent obligatoire en Belgique). Une migration vers un hébergeur certifié HDS (Scalingo) est en cours et constitue un objectif clair de notre feuille de route. Nous préférons être transparents sur ce point plutôt que de surpromettre.</p></div>
-                    </div>
-                    <div class="faq-item" data-reveal>
-                        <button class="faq-header" aria-expanded="false">
-                            <span>Comment les données sont-elles chiffrées et protégées ?</span>
-                            <span class="faq-icon" aria-hidden="true"></span>
-                        </button>
-                        <div class="faq-body"><p>Toutes les données sont chiffrées en transit et au repos, avec un contrôle d'accès strict par rôle qui limite chaque accès au strict nécessaire. La sécurité est au cœur de la solution et fait l'objet d'améliorations continues, notamment dans le cadre de notre démarche vers une certification HDS.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== RÉSERVER UN ESSAI ===== -->
-        <!--
-            ════════════════════════════════════════════════════════════════
-            ✅  RÉSERVATION CONFIGURÉE — Google Agenda + Google Meet
-            ────────────────────────────────────────────────────────────────
-            Lien actuel : https://calendar.app.google/AkbRsgyFtzdRH5jFA
-            (Planning de rendez-vous Google ; un lien Google Meet est généré à chaque réservation.)
-            Pour le changer : modifier l'URL du href du bouton « Confirmer mon créneau » ci-dessous.
-            ════════════════════════════════════════════════════════════════
-        -->
-        <section id="reserver" class="section section--dark">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge badge--light">Réserver un essai</span>
-                    <h2>Prêt à transformer<br>votre suivi post-op ?</h2>
-                    <p class="subtitle subtitle--center">30 minutes en visio pour configurer une démo sur vos types d'interventions — vous repartez avec un essai prêt à l'emploi. Sans engagement.</p>
-                </div>
-
-                <div class="booking-grid" data-reveal>
-                    <!-- Colonne gauche : ce qui se passe -->
-                    <div class="booking-info">
-                        <ul class="booking-list">
-                            <li>
-                                <span class="icon-chip icon-chip--light" aria-hidden="true"><i data-lucide="clock"></i></span>
-                                <div>
-                                    <h3>30 minutes, en visio</h3>
-                                    <p>Un échange par Google Meet, sans engagement. Le lien de connexion est généré automatiquement et ajouté à votre agenda.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="icon-chip icon-chip--light" aria-hidden="true"><i data-lucide="list-checks"></i></span>
-                                <div>
-                                    <h3>Une démo sur vos interventions</h3>
-                                    <p>On configure les protocoles selon ce que vous opérez, et on vous montre le suivi d'un patient de A à Z.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="icon-chip icon-chip--light" aria-hidden="true"><i data-lucide="circle-check-big"></i></span>
-                                <div>
-                                    <h3>Un essai prêt à l'emploi</h3>
-                                    <p>Repartez avec un environnement de test configuré pour votre structure, accompagné lors de vos premiers patients.</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="booking-meta">
-                            <span><i data-lucide="shield-check" aria-hidden="true"></i> Sans engagement</span>
-                            <span><i data-lucide="video" aria-hidden="true"></i> Visio Google Meet</span>
-                            <span><i data-lucide="calendar-check" aria-hidden="true"></i> Confirmation immédiate</span>
-                        </div>
-                    </div>
-
-                    <!-- Colonne droite : widget de réservation -->
-                    <div class="booking-card">
-                        <div class="booking-card-head">
-                            <span class="booking-cal-icon" aria-hidden="true"><i data-lucide="calendar"></i></span>
-                            <div>
-                                <div class="booking-card-title">Choisissez votre créneau</div>
-                                <div class="booking-card-sub">Équipe Karefully · 30 min · Google Meet</div>
-                            </div>
-                        </div>
-
-                        <div class="booking-days" aria-hidden="true">
-                            <span class="b-day">Lun<strong>16</strong></span>
-                            <span class="b-day">Mar<strong>17</strong></span>
-                            <span class="b-day">Mer<strong>18</strong></span>
-                            <span class="b-day">Jeu<strong>19</strong></span>
-                            <span class="b-day">Ven<strong>20</strong></span>
-                        </div>
-                        <div class="booking-slots" aria-hidden="true">
-                            <span class="b-slot">09:00</span>
-                            <span class="b-slot">10:30</span>
-                            <span class="b-slot">14:00</span>
-                            <span class="b-slot">16:30</span>
-                        </div>
-                        <p class="booking-hint">Créneaux donnés à titre indicatif — vous choisissez l'horaire final sur l'agenda sécurisé.</p>
-
-                        <a href="https://calendar.app.google/AkbRsgyFtzdRH5jFA" target="_blank" rel="noopener" class="btn btn-primary btn-block btn-lg booking-confirm">Confirmer mon créneau</a>
-                        <p class="booking-fineprint">Vous serez redirigé vers l'agenda sécurisé — un lien Google Meet vous est envoyé aussitôt.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <a href="#" class="brand" aria-label="Karefully — accueil">
-                    <span class="brand-mark" aria-hidden="true">
-                        <svg viewBox="0 0 100 100" width="30" height="30" fill="none">
-                            <path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                    <span class="brand-name">karefully</span>
-                </a>
-                <p>Le suivi post-opératoire enfin structuré, sécurisé et serein.</p>
-            </div>
-            <nav class="footer-links" aria-label="Liens de pied de page">
-                <a href="#fonctionnalites">Fonctionnalités</a>
-                <a href="#securite">Sécurité</a>
-                <a href="guide.html">Guide d'utilisation</a>
-                <a href="#tarifs">Offre</a>
-                <a href="#reserver">Réserver un essai</a>
-            </nav>
-            <nav class="footer-legal" aria-label="Mentions légales">
-                <a href="mentions-legales.html">Mentions légales</a>
-                <a href="politique-confidentialite.html">Confidentialité</a>
-                <a href="conditions-generales.html">CGU/CGV</a>
-            </nav>
-        </div>
-        <div class="container footer-bottom">
-            <p>© 2026 Karefully · contact@karefully.app</p>
-        </div>
-    </footer>
-
-    <!-- ===== BOUTON FLOTTANT — Réserver un essai ===== -->
-    <a href="#reserver" class="fab-reserver" id="fabReserver" aria-label="Réserver un essai">
-        <i data-lucide="calendar" aria-hidden="true"></i>
-        <span class="fab-label">Réserver un essai</span>
+<!-- ===== NAVIGATION ===== -->
+<div class="nav-wrap">
+<nav class="nav glass-nav" id="siteNav" aria-label="Navigation principale">
+    <a class="brand" href="#top" aria-label="Karefully — accueil">
+        <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="#2F6B70" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="brand__name">karefully</span>
     </a>
 
-    <!-- Icônes Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js"></script>
+    <div class="nav__links">
+        <a href="#features">Fonctionnalités</a>
+        <a href="#parcours">Comment ça marche</a>
+        <a href="#securite">Sécurité</a>
+        <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="nav__end">
+        <a class="btn btn-primary btn-sm nav__cta" href="#demo">Demander une démo</a>
+        <button class="nav__burger" type="button" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Ouvrir le menu">
+            <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+    </div>
+</nav>
+</div>
+
+<div class="nav-scrim" id="navScrim" hidden></div>
+
+<aside class="nav-drawer" id="navPanel" aria-label="Menu de navigation" hidden>
+    <div class="nav-drawer__head">
+        <span class="brand" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="#2F6B70" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="brand__name">karefully</span>
+        </span>
+        <button class="nav-drawer__close" type="button" id="navClose" aria-label="Fermer le menu">
+            <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+        </button>
+    </div>
+    <nav class="nav-drawer__links" aria-label="Sections du site">
+        <a href="#features">Fonctionnalités</a>
+        <a href="#parcours">Comment ça marche</a>
+        <a href="#securite">Sécurité</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+</aside>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+    <p class="eyebrow">Suivi péri-opératoire · Chirurgie &amp; médecine esthétique</p>
+    <h1 class="h1">Le suivi péri-opératoire, enfin structuré.</h1>
+    <p class="lead">De la préparation à la récupération, Karefully organise le parcours de vos patients et vous montre, en un coup d'œil, quels dossiers demandent votre attention aujourd'hui.</p>
+
+    <div class="hero__actions">
+        <a class="btn btn-primary" href="#demo">Demander une démo</a>
+        <a class="btn btn-secondary" href="#features">Voir l'application</a>
+    </div>
+    <p class="hero__badge">Gratuit pendant la phase pilote · Sans engagement · Sans carte bancaire</p>
+
+    <div class="hero__devices">
+        <div class="browser browser--hero">
+            <div class="browser__bar" aria-hidden="true">
+                <span class="browser__dots"><span></span><span></span><span></span></span>
+                <span class="browser__url">karefully.app</span>
+                <span class="browser__spacer"></span>
+            </div>
+            <img src="assets/app/01-dashboard-aujourdhui.webp"
+                 srcset="assets/app/01-dashboard-aujourdhui-sm.webp 760w, assets/app/01-dashboard-aujourdhui.webp 2040w"
+                 sizes="(max-width: 768px) 92vw, (max-width: 1100px) 90vw, 1020px"
+                 width="2040" height="1275"
+                 alt="Tableau de bord équipe Karefully — la file du jour, triée selon vos critères"
+                 fetchpriority="high" decoding="async">
+        </div>
+        <div class="phone hero__phone">
+            <img src="assets/app/12-patient-postop-accueil.webp" width="620" height="1342"
+                 alt="Portail patient Karefully — accueil post-opératoire, bilan du jour" decoding="async">
+        </div>
+    </div>
+</header>
+
+<!-- ===== BANDEAU CONFIANCE ===== -->
+<section class="section--tight section" aria-label="Garanties Karefully">
+    <div class="container">
+        <ul class="trust-grid reveal reveal-stagger" style="list-style:none;margin:0;padding:0">
+            <li class="trust-card glass-inset">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-server"></use></svg></span>
+                <span>Hébergement en France · certifié HDS</span>
+            </li>
+            <li class="trust-card glass-inset">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"></use></svg></span>
+                <span>Conforme RGPD</span>
+            </li>
+            <li class="trust-card glass-inset">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-rocket"></use></svg></span>
+                <span>Mise en route en moins de 30 min</span>
+            </li>
+            <li class="trust-card glass-inset">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-timer"></use></svg></span>
+                <span>~2 min par jour côté patient</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ===== LE PROBLÈME ===== -->
+<section class="section problem" aria-labelledby="problem-title">
+    <div class="container">
+        <div class="panel-dark reveal">
+            <h2 class="h2 h2--panel" id="problem-title" style="max-width:560px">Le même post-op, dans toutes les cliniques.</h2>
+
+            <div class="dark-grid">
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-phone-incoming"></use></svg></span>
+                    <p>Appels et messages répétés des patients inquiets.</p>
+                </div>
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-shuffle"></use></svg></span>
+                    <p>Suivi éclaté entre WhatsApp, e-mails et téléphone.</p>
+                </div>
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-file-warning"></use></svg></span>
+                    <p>Dossiers pré-op incomplets découverts au dernier moment.</p>
+                </div>
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg></span>
+                    <p>Aucune visibilité sur les patients qui ne donnent pas de nouvelles.</p>
+                </div>
+            </div>
+
+            <div class="problem__pivot">
+                <div class="problem__photo">
+                    <img src="assets/hero-patient-chirurgien.jpg" width="800" height="533"
+                         alt="Consultation entre une patiente et son chirurgien" loading="lazy" decoding="async">
+                </div>
+                <p>Vos patients méritent mieux qu'un groupe WhatsApp. Votre équipe aussi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COMMENT ÇA MARCHE ===== -->
+<section class="section" id="parcours" aria-labelledby="parcours-title">
+    <div class="container">
+        <p class="eyebrow">Comment ça marche</p>
+        <h2 class="h2" id="parcours-title">Un parcours, trois phases, zéro friction.</h2>
+
+        <div class="parcours-grid reveal reveal-stagger">
+            <article class="phase-card glass-card">
+                <p class="phase-card__step">1 · Avant l'intervention</p>
+                <h3>Le patient prépare, l'équipe valide.</h3>
+                <p>Questionnaire, documents et checklist guidés côté patient ; état de préparation de chaque dossier côté équipe.</p>
+                <div class="phase-card__visual">
+                    <img src="assets/app/02-mes-patients.webp" width="760" height="475"
+                         alt="Liste Mes patients — états de préparation pré-opératoire" loading="lazy" decoding="async">
+                </div>
+            </article>
+
+            <article class="phase-card glass-card">
+                <p class="phase-card__step">2 · Le jour J</p>
+                <h3>La bascule est automatique.</h3>
+                <p>Le dossier passe en suivi post-opératoire tout seul, consignes du jour comprises. Rien à dupliquer, rien à oublier.</p>
+                <div class="switch-visual glass-inset" aria-hidden="true">
+                    <span class="switch-visual__tag switch-visual__tag--pre">Pré-op</span>
+                    <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                    <span class="switch-visual__tag switch-visual__tag--post">Post-op · J0</span>
+                </div>
+            </article>
+
+            <article class="phase-card glass-card">
+                <p class="phase-card__step">3 · Après l'intervention</p>
+                <h3>2 minutes par jour pour le patient. Une vue claire pour vous.</h3>
+                <p>Bilan quotidien (douleur, température, photo, symptômes), et une file du jour qui priorise selon <strong>vos</strong> critères.</p>
+                <div class="phase-card__pair">
+                    <img src="assets/app/12-patient-postop-accueil.webp" width="620" height="1342"
+                         alt="Accueil post-op du portail patient" loading="lazy" decoding="async">
+                    <img src="assets/app/13-patient-bilan-quotidien.webp" width="620" height="1342"
+                         alt="Bilan quotidien patient — étape 1 sur 4" loading="lazy" decoding="async">
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CÔTÉ ÉQUIPE ===== -->
+<section class="section section--wide-gap" id="features" aria-labelledby="features-title">
+    <div class="container">
+        <p class="eyebrow">Côté équipe</p>
+        <h2 class="h2" id="features-title" style="max-width:760px;margin-bottom:56px">Voyez en un coup d'œil quels patients demandent votre attention aujourd'hui.</h2>
+
+        <div class="feature-row reveal">
+            <div class="browser">
+                <div class="browser__bar" aria-hidden="true">
+                    <span class="browser__dots"><span></span><span></span><span></span></span>
+                    <span class="browser__url">karefully.app</span>
+                    <span class="browser__spacer"></span>
+                </div>
+                <img src="assets/app/01-dashboard-aujourdhui.webp"
+                     srcset="assets/app/01-dashboard-aujourdhui-sm.webp 760w, assets/app/01-dashboard-aujourdhui.webp 2040w"
+                     sizes="(max-width: 900px) 92vw, 660px"
+                     width="2040" height="1275"
+                     alt="Dashboard Aujourd'hui — interventions, réponses à examiner, préparations en retard, patients sans nouvelles"
+                     loading="lazy" decoding="async">
+            </div>
+            <div class="feature-row__text">
+                <h3 class="h3">La journée, déjà triée.</h3>
+                <p class="body-text">Interventions du jour, réponses de patients à examiner, préparations en retard, patients sans nouvelles : votre file du matin, sans fouiller dans les dossiers.</p>
+                <p class="note" style="margin-top:14px">Priorise votre liste selon les réponses que vos patients déclarent — selon vos critères, validés par vous.</p>
+            </div>
+        </div>
+
+        <div class="feature-row feature-row--reverse reveal">
+            <div class="feature-row__text">
+                <h3 class="h3">Le dossier qui raconte la récupération.</h3>
+                <p class="body-text">Courbe de douleur jour par jour comparée à la courbe attendue, dernier bilan avec vos seuils en regard, photos, notes d'équipe, feuille de route.</p>
+            </div>
+            <div class="browser">
+                <div class="browser__bar" aria-hidden="true">
+                    <span class="browser__dots"><span></span><span></span><span></span></span>
+                    <span class="browser__url">karefully.app</span>
+                    <span class="browser__spacer"></span>
+                </div>
+                <img src="assets/app/03-dossier-patient.webp" width="1360" height="850"
+                     alt="Dossier patient — courbe de douleur comparée à la courbe attendue" loading="lazy" decoding="async">
+            </div>
+        </div>
+
+        <div class="feature-row reveal">
+            <div class="browser">
+                <div class="browser__bar" aria-hidden="true">
+                    <span class="browser__dots"><span></span><span></span><span></span></span>
+                    <span class="browser__url">karefully.app</span>
+                    <span class="browser__spacer"></span>
+                </div>
+                <img src="assets/app/06-messages-equipe.webp" width="1360" height="850"
+                     alt="Dossier patient, onglet Messages — échange avec le patient, accusés de lecture et rendez-vous de contrôle en visioconférence" loading="lazy" decoding="async">
+            </div>
+            <div class="feature-row__text">
+                <h3 class="h3">Une messagerie sécurisée, pas un numéro perso.</h3>
+                <p class="body-text">Les échanges patients centralisés, visibles de toute l'équipe, hors WhatsApp.</p>
+            </div>
+        </div>
+
+        <div class="roles-card glass-card reveal">
+            <div>
+                <p class="eyebrow">Toute l'équipe, un seul dossier</p>
+                <h3>Chirurgien, infirmier·ère et anesthésiste au même endroit.</h3>
+                <p class="body-text" style="margin-bottom:12px">Karefully regroupe les interactions du chirurgien, de l'infirmier·ère responsable du suivi et de l'anesthésiste sur un seul dossier : un contrôle complet du pré-opératoire et du post-opératoire du patient, sans fil de discussion parallèle.</p>
+                <p class="note" style="font-size:14px;line-height:1.55">Chacun accède à ce que son rôle prévoit, et personne ne redemande au patient ce qu'il a déjà renseigné.</p>
+            </div>
+            <ul class="roles-list" style="list-style:none;margin:0;padding:0">
+                <li class="role-item">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-stethoscope"></use></svg></span>
+                    <span>
+                        <span class="role-item__title">Chirurgien</span>
+                        <span class="role-item__desc" style="display:block">Définit et valide les protocoles et les critères.</span>
+                    </span>
+                </li>
+                <li class="role-item">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-heart-pulse"></use></svg></span>
+                    <span>
+                        <span class="role-item__title">Infirmier·ère responsable du suivi</span>
+                        <span class="role-item__desc" style="display:block">Traite la file du jour et répond aux patients.</span>
+                    </span>
+                </li>
+                <li class="role-item">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-syringe"></use></svg></span>
+                    <span>
+                        <span class="role-item__title">Anesthésiste</span>
+                        <span class="role-item__desc" style="display:block">Relit le questionnaire et les documents pré-op.</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mini-grid reveal reveal-stagger">
+            <article class="mini-card glass-card">
+                <h3>Votre activité, en chiffres.</h3>
+                <p>Patients suivis, complétion des tâches, tendance de douleur moyenne, répartition par statut.</p>
+                <img src="assets/app/05-analytique.webp" width="1040" height="650"
+                     alt="Analytique clinique — patients suivis, complétion des tâches, tendance de douleur" loading="lazy" decoding="async">
+            </article>
+            <article class="mini-card glass-card">
+                <h3>L'agenda de la clinique, connecté aux dossiers.</h3>
+                <p>Consultations et interventions, reliées directement aux dossiers patients.</p>
+                <img src="assets/app/04-agenda.webp" width="1040" height="650"
+                     alt="Agenda de la clinique" loading="lazy" decoding="async">
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CÔTÉ PATIENT ===== -->
+<section class="section section--wide-gap patient-section" aria-labelledby="patient-title">
+    <div class="container">
+        <p class="eyebrow">Côté patient</p>
+        <h2 class="h2" id="patient-title">Pensé pour le patient. Sans application à installer.</h2>
+
+        <div class="phone-row reveal reveal-stagger">
+            <div class="phone">
+                <img src="assets/app/17-patient-bienvenue.webp" width="620" height="1342"
+                     alt="Accueil personnalisé aux couleurs de la clinique" loading="lazy" decoding="async">
+            </div>
+            <div class="phone">
+                <img src="assets/app/10-patient-preop-accueil.webp" width="620" height="1342"
+                     alt="Préparation guidée avant l'intervention" loading="lazy" decoding="async">
+            </div>
+            <div class="phone">
+                <img src="assets/app/13-patient-bilan-quotidien.webp" width="620" height="1342"
+                     alt="Le bilan du jour en 4 étapes simples" loading="lazy" decoding="async">
+            </div>
+            <div class="phone">
+                <img src="assets/app/14-patient-messages.webp" width="620" height="1342"
+                     alt="Messagerie patient — conversation sécurisée (HDS) avec l'équipe soignante" loading="lazy" decoding="async">
+            </div>
+        </div>
+
+        <ul class="patient-pills" style="list-style:none;margin-top:40px;padding:0">
+            <li class="pill-tint"><svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg>Invitation par lien — aucune installation</li>
+            <li class="pill-tint"><svg class="icon" aria-hidden="true"><use href="#i-languages"></use></svg>Disponible en français et en anglais</li>
+            <li class="pill-tint"><svg class="icon" aria-hidden="true"><use href="#i-life-buoy"></use></svg>Aide &amp; urgences accessibles à tout moment</li>
+        </ul>
+        <p class="patient-closing">Votre équipe consulte vos réponses chaque jour. Toutes vos instructions au même endroit.</p>
+    </div>
+</section>
+
+<!-- ===== VOS CRITÈRES ===== -->
+<section class="section section--wide-gap" aria-labelledby="criteria-title">
+    <div class="container">
+        <div class="criteria-card glass-card reveal">
+            <div>
+                <p class="eyebrow">Vos critères, vos protocoles</p>
+                <h2 class="h2" id="criteria-title">Votre médecine, vos règles.</h2>
+                <p class="body-text">Karefully n'impose aucun seuil : vous définissez et validez vous-même les critères qui classent un dossier « À surveiller » (douleur, température, absence de réponse…), protocole par protocole. Chaque validation est historisée. Le patient classé « À surveiller » affiche toujours quel critère l'a déclenché — et l'évaluation clinique reste, à chaque instant, la vôtre.</p>
+            </div>
+
+            <div class="criteria-demo" aria-hidden="true">
+                <div class="patient-row">
+                    <div class="patient-row__head">
+                        <span class="patient-row__avatar patient-row__avatar--watch">PL</span>
+                        <span class="patient-row__id">
+                            <span class="patient-row__name" style="display:block">Paul Lambert</span>
+                            <span class="patient-row__meta">Rhinoplastie · J+3</span>
+                        </span>
+                        <span class="badge badge--watch">À surveiller</span>
+                    </div>
+                    <p class="patient-row__trigger">Douleur déclarée : <strong>8/10</strong> — votre critère : <strong class="criterion">≥ 7</strong></p>
+                </div>
+                <div class="patient-row">
+                    <div class="patient-row__head">
+                        <span class="patient-row__avatar patient-row__avatar--ok">CD</span>
+                        <span class="patient-row__id">
+                            <span class="patient-row__name" style="display:block">Camille Dubois</span>
+                            <span class="patient-row__meta">Augmentation mammaire · J+9</span>
+                        </span>
+                        <span class="badge badge--ok">Va bien</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SÉCURITÉ ===== -->
+<section class="section" id="securite" aria-labelledby="security-title">
+    <div class="container">
+        <div class="panel-dark reveal">
+            <p class="eyebrow eyebrow--on-dark">Sécurité &amp; conformité</p>
+            <h2 class="h2 h2--panel" id="security-title">Les données de santé, traitées comme telles.</h2>
+
+            <div class="dark-grid">
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-server"></use></svg></span>
+                    <h3>Hébergement en France</h3>
+                    <p>Hébergeur certifié HDS.</p>
+                </div>
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"></use></svg></span>
+                    <h3>Conforme RGPD</h3>
+                    <p>Données en UE, jamais revendues.</p>
+                </div>
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></span>
+                    <h3>Accès par rôles</h3>
+                    <p>Chacun ne voit que ce qu'il doit voir.</p>
+                </div>
+                <div class="dark-card">
+                    <span class="icon-tile icon-tile--dark"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+                    <h3>Messagerie sécurisée</h3>
+                    <p>Fini les données médicales sur WhatsApp.</p>
+                </div>
+            </div>
+
+            <p class="disclaimer">Karefully est un outil d'organisation et de communication. Il ne réalise aucune interprétation clinique, aucun diagnostic et aucune détection automatisée de complication : l'évaluation clinique appartient au praticien.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OFFRE PILOTE ===== -->
+<section class="section" aria-labelledby="pilot-title">
+    <div class="container section--narrow">
+        <div class="pilot-card glass-card reveal">
+            <p class="eyebrow">Programme pilote</p>
+            <h2 class="h2" id="pilot-title">Gratuit pendant la phase pilote.</h2>
+            <p class="pilot-card__intro">Karefully est en phase de lancement. Nous ouvrons la plateforme à un nombre limité de cliniques pilotes : accès complet gratuit, mise en route accompagnée, et un canal direct avec l'équipe qui construit le produit.</p>
+
+            <ul class="pilot-list">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Accès complet, gratuit pendant toute la phase pilote</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Sans engagement, sans carte bancaire</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Onboarding accompagné (moins de 30 minutes)</li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Vos retours façonnent la feuille de route — et les pilotes bénéficieront de conditions préférentielles au lancement</li>
+            </ul>
+
+            <a class="btn btn-primary" href="#demo">Rejoindre le programme pilote</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container section--faq">
+        <div class="faq-head">
+            <p class="eyebrow">FAQ</p>
+            <h2 class="h2" id="faq-title">Questions fréquentes</h2>
+        </div>
+
+        <div class="faq-list" id="faqList">
+            <div class="faq-item glass-card is-open">
+                <h3><button class="faq-trigger" type="button" aria-expanded="true" aria-controls="faq-a-1">Karefully est-il un dispositif médical ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-1"><div><p>Non. Karefully est un outil d'organisation et de communication : il collecte les auto-évaluations déclarées par les patients et les présente à l'équipe selon des critères de priorisation définis et validés par le chirurgien. Il ne réalise aucune interprétation clinique, aucun diagnostic et aucune détection automatisée de complication.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-2">Où sont hébergées les données ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-2"><div><p>En France, chez un hébergeur certifié HDS (Hébergeur de Données de Santé), en conformité avec le RGPD.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-3">Combien ça coûte ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-3"><div><p>Karefully est gratuit pendant la phase pilote, sans carte bancaire. La tarification sera annoncée au lancement commercial ; les cliniques pilotes bénéficieront de conditions préférentielles.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-4">Combien de temps pour démarrer ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-4"><div><p>Moins de 30 minutes : les protocoles sont pré-configurés par intervention, ajustables à votre pratique, et l'onboarding est accompagné par notre équipe.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-5">Mes patients doivent-ils installer une application ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-5"><div><p>Non. Karefully fonctionne dans le navigateur : le patient reçoit un lien d'invitation et son bilan quotidien prend environ 2 minutes.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-6">Et si un patient ne répond pas ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-6"><div><p>Il apparaît dans « Sans nouvelles » avec une relance en un clic — vous savez toujours qui n'a pas donné signe de vie.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-7">Qui a accès aux données ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-7"><div><p>Uniquement l'équipe de votre clinique, selon des rôles définis (chirurgien, infirmière, secrétariat…). Le patient n'accède qu'à son propre espace.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-8">Puis-je utiliser mes propres protocoles ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-8"><div><p>Oui : feuilles de route, consignes, documents et critères de priorisation sont paramétrables par intervention.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-9">En quelles langues ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-9"><div><p>L'interface équipe et le portail patient sont disponibles en français et en anglais.</p></div></div>
+            </div>
+
+            <div class="faq-item glass-card">
+                <h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a-10">Et à la fin du pilote ?<svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button></h3>
+                <div class="faq-answer" id="faq-a-10"><div><p>Aucun engagement : vous restez libres, et vos données vous appartiennent (export possible).</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== DEMANDE DE DÉMO ===== -->
+<section class="section" id="demo" aria-labelledby="demo-title">
+    <div class="container">
+        <div class="panel-dark demo-panel reveal">
+            <div>
+                <h2 class="h2" id="demo-title">Prêt à structurer votre suivi péri-opératoire ?</h2>
+                <p class="demo-panel__lead">20 minutes en visio suffisent pour voir si Karefully colle à votre pratique.</p>
+                <a class="btn btn-ghost-dark" href="https://calendar.app.google/RDw6EcsNP2Dms6vLA" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true" style="width:17px;height:17px"><use href="#i-calendar"></use></svg>
+                    Réserver directement un créneau
+                </a>
+                <p class="demo-panel__reply">Réponse sous 24 h ouvrées.</p>
+            </div>
+
+            <form class="demo-form" id="demoForm" method="post" action="/api/demo" novalidate>
+                <input class="honeypot" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <p class="form-status form-status--ok" id="formSuccess" role="status" hidden>
+                    <svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg>
+                    <span>Merci ! Nous revenons vers vous sous 24 h ouvrées.</span>
+                </p>
+                <p class="form-status form-status--error" id="formError" role="alert" hidden>
+                    <svg class="icon" aria-hidden="true"><use href="#i-alert-circle"></use></svg>
+                    <span>L'envoi a échoué. Vous pouvez <a href="https://calendar.app.google/RDw6EcsNP2Dms6vLA" target="_blank" rel="noopener">réserver directement un créneau</a>.</span>
+                </p>
+
+                <label class="field" for="f-name">Nom et prénom *
+                    <input id="f-name" name="name" type="text" autocomplete="name" required>
+                </label>
+
+                <label class="field" for="f-email">E-mail professionnel *
+                    <input id="f-email" name="email" type="email" autocomplete="email" required>
+                </label>
+
+                <label class="field" for="f-clinic">Clinique / cabinet *
+                    <input id="f-clinic" name="clinic" type="text" autocomplete="organization" required>
+                </label>
+
+                <label class="field" for="f-specialty">Spécialité *
+                    <select id="f-specialty" name="specialty" required>
+                        <option value="">Sélectionner…</option>
+                        <option>Chirurgie plastique &amp; esthétique</option>
+                        <option>Médecine esthétique</option>
+                        <option>Autre</option>
+                    </select>
+                </label>
+
+                <label class="field" for="f-phone">Téléphone
+                    <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+                </label>
+
+                <label class="field" for="f-volume">Interventions par mois
+                    <select id="f-volume" name="volume">
+                        <option value="">Sélectionner…</option>
+                        <option>&lt; 10</option>
+                        <option>10–30</option>
+                        <option>30–100</option>
+                        <option>&gt; 100</option>
+                    </select>
+                </label>
+
+                <label class="field field--full" for="f-message">Message
+                    <textarea id="f-message" name="message" rows="3" placeholder="Parlez-nous de votre pratique, de vos besoins…"></textarea>
+                </label>
+
+                <label class="field-consent" for="f-consent">
+                    <input id="f-consent" name="consent" type="checkbox" required>
+                    <span>J'accepte que Karefully me recontacte au sujet de ma demande. Voir la <a href="politique-confidentialite.html">politique de confidentialité</a>.</span>
+                </label>
+
+                <button class="btn btn-primary" type="submit" id="demoSubmit">Envoyer ma demande</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer__top">
+        <div>
+            <a class="brand" href="#top" aria-label="Karefully — accueil">
+                <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="#2F6B70" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="brand__name">karefully</span>
+            </a>
+            <p class="footer__tagline">Le suivi péri-opératoire, enfin structuré.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Liens de bas de page">
+            <ul>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="guide.html">Guide d'utilisation</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <ul>
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                <li><a href="conditions-generales.html">CGU</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="footer__bottom">
+        <span class="footer__legal">
+            © 2026 Karefully
+            <span class="footer__credit">Fait avec <span class="footer__heart" aria-hidden="true">❤</span><span class="visually-hidden">amour</span> par <a href="https://rootsagency.be" target="_blank" rel="noopener">Roots</a></span>
+        </span>
+        <span class="footer__hds"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg>Données hébergées en France · HDS</span>
+    </div>
+</footer>
+
+<div class="sticky-cta">
+    <a class="btn btn-primary" href="#demo">Demander une démo</a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Karefully",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "url": "https://karefully-app.com",
+  "inLanguage": ["fr", "en"],
+  "description": "Karefully est un outil d'organisation et de communication pour les cliniques de chirurgie esthétique : préparation pré-opératoire guidée, bilan quotidien déclaré par le patient et priorisation des dossiers selon les critères définis par le chirurgien.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Accès complet gratuit pendant la phase pilote, sans engagement et sans carte bancaire."
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Karefully est-il un dispositif médical ?","acceptedAnswer":{"@type":"Answer","text":"Non. Karefully est un outil d'organisation et de communication : il collecte les auto-évaluations déclarées par les patients et les présente à l'équipe selon des critères de priorisation définis et validés par le chirurgien. Il ne réalise aucune interprétation clinique, aucun diagnostic et aucune détection automatisée de complication."}},
+    {"@type":"Question","name":"Où sont hébergées les données ?","acceptedAnswer":{"@type":"Answer","text":"En France, chez un hébergeur certifié HDS (Hébergeur de Données de Santé), en conformité avec le RGPD."}},
+    {"@type":"Question","name":"Combien ça coûte ?","acceptedAnswer":{"@type":"Answer","text":"Karefully est gratuit pendant la phase pilote, sans carte bancaire. La tarification sera annoncée au lancement commercial ; les cliniques pilotes bénéficieront de conditions préférentielles."}},
+    {"@type":"Question","name":"Combien de temps pour démarrer ?","acceptedAnswer":{"@type":"Answer","text":"Moins de 30 minutes : les protocoles sont pré-configurés par intervention, ajustables à votre pratique, et l'onboarding est accompagné par notre équipe."}},
+    {"@type":"Question","name":"Mes patients doivent-ils installer une application ?","acceptedAnswer":{"@type":"Answer","text":"Non. Karefully fonctionne dans le navigateur : le patient reçoit un lien d'invitation et son bilan quotidien prend environ 2 minutes."}},
+    {"@type":"Question","name":"Et si un patient ne répond pas ?","acceptedAnswer":{"@type":"Answer","text":"Il apparaît dans « Sans nouvelles » avec une relance en un clic — vous savez toujours qui n'a pas donné signe de vie."}},
+    {"@type":"Question","name":"Qui a accès aux données ?","acceptedAnswer":{"@type":"Answer","text":"Uniquement l'équipe de votre clinique, selon des rôles définis (chirurgien, infirmière, secrétariat…). Le patient n'accède qu'à son propre espace."}},
+    {"@type":"Question","name":"Puis-je utiliser mes propres protocoles ?","acceptedAnswer":{"@type":"Answer","text":"Oui : feuilles de route, consignes, documents et critères de priorisation sont paramétrables par intervention."}},
+    {"@type":"Question","name":"En quelles langues ?","acceptedAnswer":{"@type":"Answer","text":"L'interface équipe et le portail patient sont disponibles en français et en anglais."}},
+    {"@type":"Question","name":"Et à la fin du pilote ?","acceptedAnswer":{"@type":"Answer","text":"Aucun engagement : vous restez libres, et vos données vous appartiennent (export possible)."}}
+  ]
+}
+</script>
+
+<script src="script.js" defer></script>
 </body>
 </html>
