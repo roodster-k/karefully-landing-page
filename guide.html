@@ -1,264 +1,249 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
 
-    <script>document.documentElement.classList.add('js');</script>
+<title>Guide d'utilisation — Karefully pour les chirurgiens et cliniques</title>
+<meta name="description" content="Prenez Karefully en main : configurez vos protocoles, invitez votre équipe, ajoutez vos patients et suivez leur récupération depuis un seul tableau de bord.">
+<meta name="theme-color" content="#EAF1F0">
+<link rel="canonical" href="https://karefully-app.com/guide.html">
 
-    <!-- SEO -->
-    <title>Guide d'utilisation — Karefully pour les chirurgiens et cliniques</title>
-    <meta name="description" content="Prenez Karefully en main : configurez vos protocoles, invitez votre équipe, ajoutez vos patients et suivez leur rétablissement post-opératoire depuis un seul tableau de bord.">
-    <meta name="theme-color" content="#5C7A6B">
-    <link rel="canonical" href="https://karefully.app/guide.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Karefully">
+<meta property="og:title" content="Guide d'utilisation — Karefully">
+<meta property="og:description" content="De la configuration au suivi quotidien de vos patients, en quelques étapes.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://karefully-app.com/guide.html">
 
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Guide d'utilisation — Karefully">
-    <meta property="og:description" content="De la configuration au suivi quotidien de vos patients, en quelques étapes.">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="https://karefully.app/guide.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="logo/brume/favicon-brume-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="logo/brume/favicon-brume-32.png">
 
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="logo/png/favicon-mint-32px.png">
-    <link rel="apple-touch-icon" href="logo/png/favicon-mint-256px.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+<link rel="preload" href="fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="#main" class="skip-link">Aller au contenu</a>
 
-    <!-- ===== NAVIGATION ===== -->
-    <header>
-        <nav id="navbar" aria-label="Navigation principale">
-            <a href="index.html" class="brand" aria-label="Karefully — accueil">
-                <span class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 100 100" width="34" height="34" fill="none">
-                        <path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-                <span class="brand-name">karefully</span>
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+<symbol id="i-clipboard-check" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+<symbol id="i-list-filter" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></symbol>
+<symbol id="i-message" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M2 22h20"/><path d="M10 7h4"/><path d="M10 11h4"/><path d="M10 15h4"/></symbol>
+<symbol id="i-file-down" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6"/><path d="m9 15 3 3 3-3"/></symbol>
+<symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></symbol>
+</svg>
+
+<div class="subnav">
+    <div class="subnav__inner glass-nav">
+        <a class="brand" href="index.html" aria-label="Karefully — accueil">
+            <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="#2F6B70" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="brand__name">karefully</span>
+        </a>
+        <a class="btn btn-primary btn-sm" href="index.html#demo">Demander une démo</a>
+    </div>
+</div>
+
+<main id="main">
+
+<header class="page-header">
+    <a class="guide-back" href="index.html"><svg class="icon" aria-hidden="true" style="width:15px;height:15px"><use href="#i-arrow-left"></use></svg>Retour à l'accueil</a>
+    <p class="eyebrow">Guide d'utilisation</p>
+    <h1 class="h1">Prendre Karefully en main</h1>
+    <p class="lead">De la configuration de votre clinique au suivi quotidien de vos patients — voici comment ça se passe, étape par étape.</p>
+</header>
+
+<!-- ===== EN BREF ===== -->
+<section class="section" aria-labelledby="bref-title">
+    <div class="container section--faq">
+        <p class="eyebrow">En bref</p>
+        <h2 class="h2" id="bref-title">Trois temps, un suivi maîtrisé</h2>
+
+        <div class="guide-grid">
+            <article class="mini-card glass-card">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg></span>
+                <h3>1 · Configurez</h3>
+                <p>Votre clinique, vos protocoles par intervention et votre équipe — une fois pour toutes.</p>
+            </article>
+            <article class="mini-card glass-card">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-clipboard-check"></use></svg></span>
+                <h3>2 · Laissez tourner</h3>
+                <p>Le patient fait ses bilans depuis son téléphone, guidé et rassuré, sans vous solliciter.</p>
+            </article>
+            <article class="mini-card glass-card">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-list-filter"></use></svg></span>
+                <h3>3 · Réagissez</h3>
+                <p>Les dossiers « à surveiller » selon vos critères remontent en tête de votre file. Vous intervenez au bon moment, tout reste tracé.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ÉTAPES ===== -->
+<section class="section" aria-labelledby="etapes-title">
+    <div class="container section--faq">
+        <p class="eyebrow">Prise en main</p>
+        <h2 class="h2" id="etapes-title">Le parcours, étape par étape</h2>
+        <p class="body-text" style="margin:-28px 0 32px">Comptez quelques minutes pour la configuration initiale, puis quelques secondes par jour et par patient.</p>
+
+        <ol class="guide-steps">
+            <li class="guide-step glass-card">
+                <span class="guide-step__num">1</span>
+                <div>
+                    <h3>Configurez votre clinique</h3>
+                    <p>Créez votre structure et personnalisez-la à vos couleurs : votre logo et votre couleur principale s'appliquent à toute l'interface — pour vous comme pour vos patients. Vous gérez plusieurs sites&nbsp;? Ajoutez-les et basculez de l'un à l'autre depuis le sélecteur de clinique.</p>
+                </div>
+            </li>
+
+            <li class="guide-step glass-card">
+                <span class="guide-step__num">2</span>
+                <div>
+                    <h3>Créez vos protocoles par intervention</h3>
+                    <p>Pour chaque type d'intervention (rhinoplastie, augmentation mammaire, abdominoplastie…), définissez un protocole&nbsp;:</p>
+                    <ul>
+                        <li>les jalons en jours péri-opératoires (J−7, J+1, J+3, J+7…)&nbsp;;</li>
+                        <li>les consignes envoyées au patient et les tâches à cocher&nbsp;;</li>
+                        <li>les demandes de photo et le relevé de douleur&nbsp;;</li>
+                        <li>vos critères de priorisation, qui classent un dossier « à surveiller ».</li>
+                    </ul>
+                    <p>Partez d'un modèle existant à dupliquer et adapter, ou créez le vôtre de zéro. Une modification ne s'applique qu'aux futurs patients&nbsp;: les suivis en cours restent inchangés.</p>
+                </div>
+            </li>
+
+            <li class="guide-step glass-card">
+                <span class="guide-step__num">3</span>
+                <div>
+                    <h3>Invitez votre équipe</h3>
+                    <p>Ajoutez vos collaborateurs et attribuez à chacun un rôle — <strong>chirurgien</strong>, <strong>infirmier·ère</strong>, <strong>anesthésiste</strong> ou <strong>administrateur</strong>. Chaque membre reçoit une invitation par e-mail et accède aux patients de la clinique selon son rôle.</p>
+                </div>
+            </li>
+
+            <li class="guide-step glass-card">
+                <span class="guide-step__num">4</span>
+                <div>
+                    <h3>Ajoutez un patient</h3>
+                    <p>Renseignez l'intervention et la date d'opération&nbsp;: Karefully calcule automatiquement le jour péri-opératoire (J−X puis J+X) et applique le protocole correspondant. Le patient reçoit son accès et est guidé dès le premier jour.</p>
+                </div>
+            </li>
+
+            <li class="guide-step glass-card">
+                <span class="guide-step__num">5</span>
+                <div>
+                    <p class="guide-step__tag">Côté patient</p>
+                    <h3>Le patient fait son bilan quotidien</h3>
+                    <p>Chaque jour, depuis son téléphone et en moins d'une minute, le patient renseigne son ressenti, sa douleur (échelle 0-10), ses symptômes et ses photos. Il reçoit des rappels automatiques, des consignes de récupération adaptées à sa phase, et dispose d'un accès direct à l'aide et aux urgences — sans jamais vous solliciter pour rien.</p>
+                </div>
+            </li>
+
+            <li class="guide-step glass-card">
+                <span class="guide-step__num">6</span>
+                <div>
+                    <h3>Suivez et réagissez depuis votre tableau de bord</h3>
+                    <p>Vos patients sont triés pour vous&nbsp;: ceux dont les réponses déclarées atteignent l'un de vos critères (douleur, température, bilan manqué) remontent en haut, les autres se gèrent en autonomie. Le <strong>centre de veille</strong> regroupe les signaux à examiner, priorisés et horodatés&nbsp;: ouvrez le dossier, appelez, répondez via la <strong>messagerie sécurisée</strong>, puis marquez l'élément comme traité. Chaque échange reste consigné.</p>
+                </div>
+            </li>
+
+            <li class="guide-step glass-card">
+                <span class="guide-step__num" aria-hidden="true"><svg class="icon" style="width:20px;height:20px"><use href="#i-file-down"></use></svg></span>
+                <div>
+                    <h3>À tout moment&nbsp;: exportez le dossier en PDF</h3>
+                    <p>Téléchargez l'intégralité du suivi d'un patient — bilans, douleur, photos horodatées et échanges — en un PDF structuré, prêt à verser au dossier médical.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- ===== AU QUOTIDIEN ===== -->
+<section class="section" aria-labelledby="quotidien-title">
+    <div class="container section--faq">
+        <p class="eyebrow">Au quotidien</p>
+        <h2 class="h2" id="quotidien-title">Ce que vous avez sous la main</h2>
+
+        <div class="guide-grid guide-grid--2">
+            <article class="mini-card glass-card">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-chart"></use></svg></span>
+                <h3>Dossier patient complet</h3>
+                <p>Courbe de douleur jour par jour, photos horodatées, symptômes et notes d'équipe — tout sur une seule page.</p>
+            </article>
+            <article class="mini-card glass-card">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-list-filter"></use></svg></span>
+                <h3>Priorisation selon vos critères</h3>
+                <p>Un dossier passe « à surveiller » dès qu'une réponse déclarée par le patient atteint l'un des critères que vous avez définis et validés.</p>
+            </article>
+            <article class="mini-card glass-card">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg></span>
+                <h3>Messagerie tracée</h3>
+                <p>Un canal sécurisé avec accusés de lecture, qui remplace WhatsApp et reste consigné.</p>
+            </article>
+            <article class="mini-card glass-card">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-building"></use></svg></span>
+                <h3>Multi-cliniques &amp; équipe</h3>
+                <p>Un seul compte pour plusieurs structures, avec des rôles adaptés à chacun.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="section" aria-labelledby="guide-cta-title">
+    <div class="container section--faq">
+        <div class="panel-dark" style="text-align:center">
+            <p class="eyebrow eyebrow--on-dark">On vous accompagne</p>
+            <h2 class="h2 h2--panel" id="guide-cta-title" style="margin-bottom:16px">Prêt à le tester sur vos interventions&nbsp;?</h2>
+            <p style="margin:0 auto 30px;font-size:16.5px;line-height:1.6;color:var(--on-dark-soft);max-width:560px">Réservez 20 minutes en visio : on configure une démo sur vos types d'interventions et on vous accompagne lors de vos premiers patients.</p>
+            <div class="guide-cta">
+                <a class="btn btn-primary" href="index.html#demo" style="background:#fff;color:var(--brand-700);box-shadow:none">Demander une démo</a>
+                <a class="btn btn-ghost-dark" href="index.html#features">Voir les fonctionnalités</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer__top">
+        <div>
+            <a class="brand" href="index.html" aria-label="Karefully — accueil">
+                <svg viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="#2F6B70" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="brand__name">karefully</span>
             </a>
+            <p class="footer__tagline">Le suivi péri-opératoire, enfin structuré.</p>
+        </div>
 
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html#fonctionnalites">Fonctionnalités</a>
-                <a href="index.html#apercu">Aperçu</a>
-                <a href="index.html#tarifs">Offre</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="guide.html" aria-current="page">Guide</a>
-                <a href="https://karefully.app" class="btn btn-ghost nav-cta nav-login" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>Se connecter</a>
-                <a href="index.html#reserver" class="btn btn-primary nav-cta mobile-cta">Réserver un essai</a>
-            </div>
-
-            <a href="index.html#reserver" class="btn btn-primary nav-cta desktop-cta">Réserver un essai</a>
-
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
-                <span></span><span></span><span></span>
-            </button>
+        <nav class="footer__links" aria-label="Liens de bas de page">
+            <ul>
+                <li><a href="index.html#features">Fonctionnalités</a></li>
+                <li><a href="guide.html">Guide d'utilisation</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+            <ul>
+                <li><a href="mentions-legales.html">Mentions légales</a></li>
+                <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+                <li><a href="conditions-generales.html">CGU</a></li>
+            </ul>
         </nav>
-    </header>
-    <!-- [10] Overlay cliquable du menu mobile -->
-    <div class="nav-scrim" id="navScrim" aria-hidden="true"></div>
+    </div>
 
-    <main id="main">
-        <!-- ===== HERO ===== -->
-        <section id="guide-hero" class="section">
-            <div class="container container--narrow guide-hero">
-                <div data-reveal>
-                    <a href="index.html" class="guide-back">← Retour à l'accueil</a>
-                    <span class="badge">Guide d'utilisation</span>
-                    <h1>Prendre Karefully<br><span class="text-accent">en main</span></h1>
-                    <p class="subtitle subtitle--center">De la configuration de votre clinique au suivi quotidien de vos patients — voici comment ça se passe, étape par étape.</p>
-                </div>
-            </div>
-        </section>
+    <div class="footer__bottom">
+        <span class="footer__legal">
+            © 2026 Karefully
+            <span class="footer__credit">Fait avec <span class="footer__heart" aria-hidden="true">❤</span><span class="visually-hidden">amour</span> par <a href="https://rootsagency.be" target="_blank" rel="noopener">Roots</a></span>
+        </span>
+        <span class="footer__hds"><svg class="icon" aria-hidden="true" style="width:14px;height:14px"><use href="#i-map-pin-guide"></use></svg>Données hébergées en France · HDS</span>
+    </div>
+</footer>
 
-        <!-- ===== EN BREF ===== -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">En bref</span>
-                    <h2>Trois temps,<br>un suivi maîtrisé</h2>
-                </div>
-                <div class="grid-3">
-                    <article class="feature-card" data-reveal>
-                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8M13 12h8M13 18h8"/></svg></span>
-                        <h3>1 · Configurez</h3>
-                        <p>Votre clinique, vos protocoles par intervention et votre équipe — une fois pour toutes.</p>
-                    </article>
-                    <article class="feature-card" data-reveal style="--d:.06s">
-                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
-                        <h3>2 · Laissez tourner</h3>
-                        <p>Le patient fait ses bilans depuis son téléphone, guidé et rassuré, sans vous solliciter.</p>
-                    </article>
-                    <article class="feature-card" data-reveal style="--d:.12s">
-                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
-                        <h3>3 · Réagissez</h3>
-                        <p>Les cas à risque remontent en alerte. Vous intervenez au bon moment, tout reste tracé.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-map-pin-guide" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+</svg>
 
-        <!-- ===== ÉTAPES ===== -->
-        <section class="section">
-            <div class="container container--narrow">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Prise en main</span>
-                    <h2>Le parcours,<br>étape par étape</h2>
-                    <p class="subtitle subtitle--center">Comptez quelques minutes pour la configuration initiale, puis quelques secondes par jour et par patient.</p>
-                </div>
-
-                <ol class="guide-steps">
-                    <li class="guide-step" data-reveal>
-                        <span class="guide-num">1</span>
-                        <div class="guide-step-body">
-                            <h3>Configurez votre clinique</h3>
-                            <p>Créez votre structure et personnalisez-la à vos couleurs : votre logo et votre couleur principale s'appliquent à toute l'interface — pour vous comme pour vos patients. Vous gérez plusieurs sites&nbsp;? Ajoutez-les et basculez de l'un à l'autre depuis le sélecteur de clinique.</p>
-                        </div>
-                    </li>
-                    <li class="guide-step" data-reveal>
-                        <span class="guide-num">2</span>
-                        <div class="guide-step-body">
-                            <h3>Créez vos protocoles par intervention</h3>
-                            <p>Pour chaque type d'intervention (rhinoplastie, augmentation mammaire, abdominoplastie…), définissez un protocole&nbsp;:</p>
-                            <ul class="check-list">
-                                <li>les jalons en jours post-opératoires (J+1, J+3, J+7…)&nbsp;;</li>
-                                <li>les consignes envoyées au patient et les tâches à cocher&nbsp;;</li>
-                                <li>les demandes de photo et le relevé de douleur&nbsp;;</li>
-                                <li>les seuils qui déclenchent une alerte.</li>
-                            </ul>
-                            <p>Partez d'un modèle existant à dupliquer et adapter, ou créez le vôtre de zéro. Une modification ne s'applique qu'aux futurs patients&nbsp;: les suivis en cours restent inchangés.</p>
-                        </div>
-                    </li>
-                    <li class="guide-step" data-reveal>
-                        <span class="guide-num">3</span>
-                        <div class="guide-step-body">
-                            <h3>Invitez votre équipe</h3>
-                            <p>Ajoutez vos collaborateurs et attribuez à chacun un rôle — <strong>chirurgien</strong>, <strong>infirmier·e</strong> ou <strong>administrateur</strong>. Chaque membre reçoit une invitation par e-mail et accède aux patients de la clinique selon son rôle.</p>
-                        </div>
-                    </li>
-                    <li class="guide-step" data-reveal>
-                        <span class="guide-num">4</span>
-                        <div class="guide-step-body">
-                            <h3>Ajoutez un patient</h3>
-                            <p>Renseignez l'intervention et la date d'opération&nbsp;: Karefully calcule automatiquement le jour post-op (J+X) et applique le protocole correspondant. Le patient reçoit son accès et est guidé dès le premier jour.</p>
-                        </div>
-                    </li>
-                    <li class="guide-step guide-step--patient" data-reveal>
-                        <span class="guide-num">5</span>
-                        <div class="guide-step-body">
-                            <span class="guide-tag">Côté patient</span>
-                            <h3>Le patient fait son bilan quotidien</h3>
-                            <p>Chaque jour, depuis son téléphone et en moins d'une minute, le patient renseigne son humeur, sa douleur (échelle 0-10), ses symptômes et ses photos. Il reçoit des rappels automatiques, des consignes de récupération adaptées à sa phase, et dispose d'un bouton d'alerte en cas d'urgence ressentie — sans jamais vous solliciter pour rien.</p>
-                        </div>
-                    </li>
-                    <li class="guide-step" data-reveal>
-                        <span class="guide-num">6</span>
-                        <div class="guide-step-body">
-                            <h3>Suivez et réagissez depuis votre tableau de bord</h3>
-                            <p>Vos patients sont triés pour vous&nbsp;: ceux qui nécessitent une attention (douleur élevée, fièvre, bilan manqué) remontent en haut, les autres se gèrent en autonomie. Le <strong>centre de veille</strong> regroupe les alertes priorisées et horodatées&nbsp;: ouvrez le dossier, appelez, répondez via la <strong>messagerie sécurisée</strong>, puis marquez l'alerte comme traitée. Chaque échange reste consigné.</p>
-                        </div>
-                    </li>
-                    <li class="guide-step guide-step--final" data-reveal>
-                        <span class="guide-num" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6"/><path d="m9 15 3 3 3-3"/></svg></span>
-                        <div class="guide-step-body">
-                            <h3>À tout moment&nbsp;: exportez le dossier en PDF</h3>
-                            <p>Téléchargez l'intégralité du suivi d'un patient — bilans, douleur, photos horodatées et échanges — en un PDF structuré, prêt à verser au dossier médical ou à produire en cas de besoin médico-légal.</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- ===== AU QUOTIDIEN ===== -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="badge">Au quotidien</span>
-                    <h2>Ce que vous avez<br>sous la main</h2>
-                </div>
-                <div class="grid-2 benefits">
-                    <article class="benefit-card" data-reveal>
-                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
-                        <h3>Fiche patient complète</h3>
-                        <p>Courbe de douleur sur 7 jours, photos horodatées, symptômes et notes cliniques — tout sur une seule page.</p>
-                    </article>
-                    <article class="benefit-card" data-reveal style="--d:.06s">
-                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
-                        <h3>Alertes intelligentes</h3>
-                        <p>Détection précoce des complications dès qu'un seuil de votre protocole est dépassé.</p>
-                    </article>
-                    <article class="benefit-card" data-reveal style="--d:.12s">
-                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span>
-                        <h3>Messagerie tracée</h3>
-                        <p>Un canal sécurisé avec accusés de lecture, qui remplace WhatsApp et reste consigné.</p>
-                    </article>
-                    <article class="benefit-card" data-reveal style="--d:.18s">
-                        <span class="icon-chip" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M2 22h20"/><path d="M10 7h4M10 11h4M10 15h4"/></svg></span>
-                        <h3>Multi-cliniques &amp; équipe</h3>
-                        <p>Un seul compte pour plusieurs structures, avec des rôles adaptés à chacun.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== CTA ===== -->
-        <section class="section section--dark">
-            <div class="container container--narrow">
-                <div class="section-head" data-reveal>
-                    <span class="badge badge--light">On vous accompagne</span>
-                    <h2>Prêt à le tester<br>sur vos interventions ?</h2>
-                    <p class="subtitle subtitle--center">Réservez 30 minutes en visio : on configure une démo sur vos types d'interventions et on vous accompagne lors de vos premiers patients.</p>
-                </div>
-                <div class="guide-cta" data-reveal>
-                    <a href="index.html#reserver" class="btn btn-primary btn-lg">Réserver un essai</a>
-                    <a href="index.html#fonctionnalites" class="btn btn-ghost btn-lg">Voir les fonctionnalités</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <a href="index.html" class="brand" aria-label="Karefully — accueil">
-                    <span class="brand-mark" aria-hidden="true">
-                        <svg viewBox="0 0 100 100" width="30" height="30" fill="none">
-                            <path d="M22 78 V 22 M22 50 C 40 50, 50 35, 65 22 M22 50 C 40 50, 50 65, 65 78 M48 50 L 80 50 M80 38 L 80 62" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                    <span class="brand-name">karefully</span>
-                </a>
-                <p>Le suivi post-opératoire enfin structuré, sécurisé et serein.</p>
-            </div>
-            <nav class="footer-links" aria-label="Liens de pied de page">
-                <a href="index.html#fonctionnalites">Fonctionnalités</a>
-                <a href="index.html#securite">Sécurité</a>
-                <a href="guide.html">Guide d'utilisation</a>
-                <a href="index.html#reserver">Réserver un essai</a>
-            </nav>
-            <nav class="footer-legal" aria-label="Mentions légales">
-                <a href="mentions-legales.html">Mentions légales</a>
-                <a href="politique-confidentialite.html">Confidentialité</a>
-                <a href="conditions-generales.html">CGU/CGV</a>
-            </nav>
-        </div>
-        <div class="container footer-bottom">
-            <p>© 2026 Karefully · contact@karefully.app</p>
-        </div>
-    </footer>
-
-    <!-- ===== BOUTON FLOTTANT — Réserver un essai ===== -->
-    <a href="index.html#reserver" class="fab-reserver" id="fabReserver" aria-label="Réserver un essai">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        <span class="fab-label">Réserver un essai</span>
-    </a>
-
-    <script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

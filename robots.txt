@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://karefully.app/sitemap.xml
+Sitemap: https://karefully-app.com/sitemap.xml
