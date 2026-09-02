@@ -15,7 +15,7 @@ mkdir -p "$OUT"
 # Pages et ressources publiques uniquement
 cp index.html guide.html mentions-legales.html conditions-generales.html \
    politique-confidentialite.html style.css script.js favicon.svg \
-   robots.txt sitemap.xml _headers _redirects "$OUT/"
+   robots.txt sitemap.xml _headers "$OUT/"
 cp -R blog assets fonts logo functions "$OUT/"
 
 # Aucun fichier parasite
