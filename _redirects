@@ -1,0 +1,2 @@
+# www vers le domaine principal (canonical déclaré sans www)
+https://www.karefully-app.com/* https://karefully-app.com/:splat 301

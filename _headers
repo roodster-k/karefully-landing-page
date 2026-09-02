@@ -1,0 +1,22 @@
+# En-têtes appliqués par Cloudflare Pages.
+# CSP : le site ne charge aucune ressource tierce (police et icônes intégrées).
+# 'unsafe-inline' reste nécessaire pour le petit script inline qui pose la classe
+# « js » avant peinture, pour les blocs JSON-LD et pour les attributs style.
+# À étendre lors de l'ajout de Google Analytics (script-src + connect-src).
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'
+
+# Ressources versionnées par leur contenu : cache long
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/logo/*
+  Cache-Control: public, max-age=31536000, immutable

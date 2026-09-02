@@ -6,3 +6,6 @@
 # Exclu volontairement : Cloudflare Pages publie tout le dépôt, ce dossier
 # serait donc accessible en ligne. Les visuels retenus vivent dans assets/app/.
 refonte/
+
+# Dossier de build local, régénéré par deploy.sh
+dist/
