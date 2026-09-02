@@ -2055,6 +2055,72 @@ p {
 }
 
 /* ---------------------------------------------------------
+   21 bis. Bandeau de consentement (mesure d'audience)
+   --------------------------------------------------------- */
+.consent {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 80;
+    display: flex;
+    justify-content: center;
+    padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .32s var(--ease), transform .32s var(--ease);
+}
+
+.consent.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.consent[hidden] {
+    display: none;
+}
+
+.consent__inner {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    width: 100%;
+    max-width: 880px;
+    padding: 16px 18px 16px 24px;
+    border-radius: var(--r-panel);
+    pointer-events: auto;
+}
+
+.consent__text {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-600);
+}
+
+.consent__text a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.consent__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: none;
+}
+
+.consent__actions .btn {
+    white-space: nowrap;
+}
+
+/* Le bandeau ne doit pas masquer le CTA collant du mobile */
+.consent.is-visible ~ .sticky-cta {
+    display: none;
+}
+
+/* ---------------------------------------------------------
    22. Pages secondaires (guide, mentions légales…)
    --------------------------------------------------------- */
 .subnav {
@@ -3189,6 +3255,28 @@ p {
     /* --- CTA collant --- */
     .sticky-cta {
         display: flex;
+    }
+
+    /* --- Bandeau de consentement --- */
+    .consent {
+        padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    }
+
+    .consent__inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 18px;
+        border-radius: var(--r-lg);
+    }
+
+    .consent__text {
+        font-size: 13px;
+    }
+
+    .consent__actions .btn {
+        flex: 1;
+        min-height: 44px;
     }
 
     /* --- Pages secondaires --- */

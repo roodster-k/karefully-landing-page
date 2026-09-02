@@ -66,7 +66,14 @@
         </ul>
         </section>
         <section>
-        <h2>4. Vos droits</h2>
+        <h2>4. Cookies et mesure d'audience</h2>
+        <p>Le site n'utilise aucun cookie publicitaire et ne pratique aucun suivi entre sites.</p>
+        <p>Nous mesurons l'audience du site avec <strong>Google Analytics</strong>, uniquement pour comprendre quelles pages sont consultées et améliorer le site. Cette mesure <strong>n'est activée qu'après votre accord explicite</strong> : tant que vous n'avez pas accepté, aucun script Google n'est chargé et aucune donnée ne lui est transmise. Un refus n'altère en rien le fonctionnement du site.</p>
+        <p>Votre choix est conservé dans votre navigateur et vous pouvez le modifier à tout moment via le lien <strong>« Cookies »</strong> en bas de page.</p>
+        <p>L'adresse IP est anonymisée. Ces données d'audience concernent la navigation sur le site vitrine et sont totalement distinctes des données de santé traitées dans l'application Karefully, qui ne font l'objet d'aucune mesure d'audience.</p>
+        </section>
+        <section>
+        <h2>5. Vos droits</h2>
         <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Vous pouvez exercer ces droits en nous contactant à : <a href="mailto:hello@karefully-app.com">hello@karefully-app.com</a>.</p>
         </section>
     </article>
@@ -93,6 +100,7 @@
                 <li><a href="/mentions-legales">Mentions légales</a></li>
                 <li><a href="/politique-confidentialite">Confidentialité</a></li>
                 <li><a href="/conditions-generales">CGU</a></li>
+                <li><a href="#" id="consentReopen">Cookies</a></li>
             </ul>
         </nav>
     </div>
@@ -104,6 +112,18 @@
         </span>
     </div>
 </footer>
+
+<div class="consent" id="consentBanner" role="dialog" aria-live="polite" aria-label="Choix relatif à la mesure d'audience" hidden>
+    <div class="consent__inner glass-nav">
+        <p class="consent__text">Nous aimerions mesurer l'audience du site avec Google Analytics pour l'améliorer. Aucune mesure n'est effectuée sans votre accord, et le site fonctionne à l'identique si vous refusez. Voir la <a href="/politique-confidentialite">politique de confidentialité</a>.</p>
+        <div class="consent__actions">
+            <button class="btn btn-secondary btn-sm" type="button" id="consentRefuse">Refuser</button>
+            <button class="btn btn-primary btn-sm" type="button" id="consentAccept">Accepter</button>
+        </div>
+    </div>
+</div>
+
+<script src="/script.js" defer></script>
 
 </body>
 </html>

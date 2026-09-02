@@ -228,4 +228,91 @@
             });
         }
     }
+
+    /* ---------------------------------------------------------
+       Mesure d'audience — chargée uniquement après consentement
+
+       Google Analytics dépose des cookies et transfère des données hors du
+       site : sous RGPD/ePrivacy, rien ne doit partir vers Google avant un
+       accord explicite. Le script n'est donc pas dans le HTML ; il est injecté
+       ici seulement si l'utilisateur accepte. Un refus n'émet aucune requête.
+       --------------------------------------------------------- */
+    var ANALYTICS_ID = 'G-X1CWEL92PX';
+    var CONSENT_KEY = 'karefully-consent';
+
+    var readConsent = function () {
+        try {
+            return window.localStorage.getItem(CONSENT_KEY);
+        } catch (error) {
+            return null; // navigation privée ou stockage bloqué
+        }
+    };
+
+    var writeConsent = function (value) {
+        try {
+            window.localStorage.setItem(CONSENT_KEY, value);
+        } catch (error) {
+            /* sans stockage, le choix vaut pour la session en cours */
+        }
+    };
+
+    var analyticsLoaded = false;
+
+    var loadAnalytics = function () {
+        if (analyticsLoaded) return;
+        analyticsLoaded = true;
+
+        var tag = document.createElement('script');
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + ANALYTICS_ID;
+        document.head.appendChild(tag);
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        // GA4 anonymise les adresses IP par défaut : pas d'option à passer ici,
+        // en transmettre une créerait un paramètre d'événement inutile sur chaque hit.
+        window.gtag('config', ANALYTICS_ID);
+    };
+
+    var banner = document.getElementById('consentBanner');
+
+    var closeBanner = function () {
+        if (!banner) return;
+        banner.classList.remove('is-visible');
+        window.setTimeout(function () { banner.hidden = true; }, reducedMotion ? 0 : 320);
+    };
+
+    var openBanner = function () {
+        if (!banner) return;
+        banner.hidden = false;
+        requestAnimationFrame(function () { banner.classList.add('is-visible'); });
+    };
+
+    if (readConsent() === 'granted') loadAnalytics();
+
+    if (banner) {
+        var accept = document.getElementById('consentAccept');
+        var refuse = document.getElementById('consentRefuse');
+
+        if (!readConsent()) openBanner();
+
+        if (accept) accept.addEventListener('click', function () {
+            writeConsent('granted');
+            loadAnalytics();
+            closeBanner();
+        });
+
+        if (refuse) refuse.addEventListener('click', function () {
+            writeConsent('denied');
+            closeBanner();
+        });
+
+        // Le retrait doit être aussi simple que l'accord : lien dans le pied de page
+        var reopen = document.getElementById('consentReopen');
+        if (reopen) reopen.addEventListener('click', function (event) {
+            event.preventDefault();
+            openBanner();
+        });
+    }
 })();

@@ -229,6 +229,7 @@
                 <li><a href="/mentions-legales">Mentions légales</a></li>
                 <li><a href="/politique-confidentialite">Confidentialité</a></li>
                 <li><a href="/conditions-generales">CGU</a></li>
+                <li><a href="#" id="consentReopen">Cookies</a></li>
             </ul>
         </nav>
     </div>
@@ -245,6 +246,16 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 <symbol id="i-map-pin-guide" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
 </svg>
+
+<div class="consent" id="consentBanner" role="dialog" aria-live="polite" aria-label="Choix relatif à la mesure d'audience" hidden>
+    <div class="consent__inner glass-nav">
+        <p class="consent__text">Nous aimerions mesurer l'audience du site avec Google Analytics pour l'améliorer. Aucune mesure n'est effectuée sans votre accord, et le site fonctionne à l'identique si vous refusez. Voir la <a href="/politique-confidentialite">politique de confidentialité</a>.</p>
+        <div class="consent__actions">
+            <button class="btn btn-secondary btn-sm" type="button" id="consentRefuse">Refuser</button>
+            <button class="btn btn-primary btn-sm" type="button" id="consentAccept">Accepter</button>
+        </div>
+    </div>
+</div>
 
 <script src="/script.js" defer></script>
 </body>

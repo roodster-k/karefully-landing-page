@@ -702,6 +702,7 @@
                 <li><a href="/mentions-legales">Mentions légales</a></li>
                 <li><a href="/politique-confidentialite">Confidentialité</a></li>
                 <li><a href="/conditions-generales">CGU</a></li>
+                <li><a href="#" id="consentReopen">Cookies</a></li>
             </ul>
         </nav>
     </div>
@@ -804,6 +805,16 @@
   ]
 }
 </script>
+
+<div class="consent" id="consentBanner" role="dialog" aria-live="polite" aria-label="Choix relatif à la mesure d'audience" hidden>
+    <div class="consent__inner glass-nav">
+        <p class="consent__text">Nous aimerions mesurer l'audience du site avec Google Analytics pour l'améliorer. Aucune mesure n'est effectuée sans votre accord, et le site fonctionne à l'identique si vous refusez. Voir la <a href="/politique-confidentialite">politique de confidentialité</a>.</p>
+        <div class="consent__actions">
+            <button class="btn btn-secondary btn-sm" type="button" id="consentRefuse">Refuser</button>
+            <button class="btn btn-primary btn-sm" type="button" id="consentAccept">Accepter</button>
+        </div>
+    </div>
+</div>
 
 <script src="/script.js" defer></script>
 </body>
