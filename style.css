@@ -1699,7 +1699,7 @@ p {
 }
 
 .demo-panel__reply {
-    margin: 26px 0 0;
+    margin: 10px 0 0;
     font-size: 13.5px;
     color: var(--on-dark-mute);
 }
@@ -1882,6 +1882,40 @@ p {
     margin-top: 32px;
     font-size: 12.5px;
     color: var(--ink-500);
+}
+
+.footer__mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--brand-700);
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s var(--ease);
+}
+
+.footer__mail:hover {
+    border-bottom-color: var(--brand-600);
+}
+
+.demo-panel__mail {
+    margin: 20px 0 0;
+    font-size: 14.5px;
+    color: var(--on-dark-soft);
+}
+
+.demo-panel__mail a {
+    color: var(--on-dark);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(240, 246, 245, .4);
+    transition: border-color .2s var(--ease);
+}
+
+.demo-panel__mail a:hover {
+    color: var(--on-dark);
+    border-bottom-color: var(--on-dark);
 }
 
 .footer__legal {
